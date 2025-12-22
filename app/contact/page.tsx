@@ -17,14 +17,31 @@ export default function ContactPage() {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Ici, vous pouvez ajouter l'envoi du formulaire à votre backend
-    // Pour l'instant, on simule juste la soumission
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Une erreur est survenue');
+      }
+
+      // Succès
+      setSubmitted(true);
       setFormData({
         name: '',
         email: '',
@@ -36,7 +53,12 @@ export default function ContactPage() {
         interestedInTablets: false,
         message: ''
       });
-    }, 3000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Une erreur est survenue lors de l\'envoi');
+      console.error('Erreur lors de l\'envoi du formulaire:', err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -86,8 +108,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                      <a href="mailto:contact@tizi-consulting.fr" className="text-blue-600 hover:text-blue-700 font-medium">
-                        contact@tizi-consulting.fr
+                      <a href="mailto:younesstizi7@gmail.com" className="text-blue-600 hover:text-blue-700 font-medium">
+                        younesstizi7@gmail.com
                       </a>
                     </div>
                   </div>
@@ -207,6 +229,13 @@ export default function ContactPage() {
                         Remplissez ce formulaire et nous vous recontacterons rapidement pour planifier votre rendez-vous
                       </p>
                     </div>
+
+                    {error && (
+                      <div className="mb-6 bg-red-50 border-2 border-red-200 rounded-xl p-4">
+                        <p className="text-red-700 font-medium">{error}</p>
+                        <p className="text-sm text-red-600 mt-1">Veuillez réessayer ou nous contacter directement.</p>
+                      </div>
+                    )}
 
                     <form onSubmit={handleSubmit} className="space-y-6">
                       <div className="grid md:grid-cols-2 gap-6">
@@ -387,10 +416,20 @@ export default function ContactPage() {
                       <div className="pt-4">
                         <button
                           type="submit"
-                          className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-blue-500 hover:to-purple-500 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+                          disabled={loading}
+                          className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-blue-500 hover:to-purple-500 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
-                          <Send className="w-5 h-5" />
-                          Envoyer la Demande
+                          {loading ? (
+                            <>
+                              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                              Envoi en cours...
+                            </>
+                          ) : (
+                            <>
+                              <Send className="w-5 h-5" />
+                              Envoyer la Demande
+                            </>
+                          )}
                         </button>
                         <p className="text-xs text-gray-500 text-center mt-4">
                           En soumettant ce formulaire, vous acceptez d'être contacté par notre équipe.
