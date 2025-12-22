@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { BookOpen, GraduationCap, Shield, Users, Sparkles, ArrowRight, Calendar, FileText, UserCheck, Lock, School, Zap, Settings, Tablet, Palette } from 'lucide-react';
+import { BookOpen, GraduationCap, Shield, Users, Sparkles, ArrowRight, Calendar, FileText, UserCheck, Lock, School, Zap, Settings, Tablet, Palette, Mail } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -244,6 +244,13 @@ export default function Home() {
               >
                 Découvrir la Plateforme
                 <ArrowRight className="w-5 h-5" />
+              </Link>
+              <Link
+                href="/contact"
+                className="bg-white/10 backdrop-blur-md text-white px-8 py-4 rounded-xl font-bold text-lg border-2 border-white/30 hover:bg-white/20 transition-all duration-300 hover:scale-105 shadow-xl flex items-center justify-center gap-2"
+              >
+                <Mail className="w-5 h-5" />
+                Nous Contacter
               </Link>
             </div>
           </div>
