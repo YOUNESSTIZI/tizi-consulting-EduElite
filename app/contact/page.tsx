@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Calendar, Phone, Mail, MapPin, Clock, CheckCircle2, Send, User, Building2, MessageSquare, Tablet, Palette } from 'lucide-react';
+import { Calendar, Phone, Mail, MapPin, Clock, CheckCircle2, Send, User, Building2, MessageSquare, Tablet, Palette, Home } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ContactPage() {
@@ -72,12 +72,24 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Planifiez Votre Rendez-vous</h1>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            Discutons de la façon dont EduElite peut transformer la gestion de votre école
-          </p>
+      <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 text-white py-16 relative">
+        <div className="container mx-auto px-4">
+          {/* Bouton retour à l'accueil */}
+          <div className="mb-8 flex justify-start">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white px-5 py-2.5 rounded-xl font-semibold transition-all duration-300 backdrop-blur-sm border border-white/30 hover:scale-105 shadow-lg"
+            >
+              <Home className="w-5 h-5" />
+              Retour à l'accueil
+            </Link>
+          </div>
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Planifiez Votre Rendez-vous</h1>
+            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+              Discutons de la façon dont EduElite peut transformer la gestion de votre école
+            </p>
+          </div>
         </div>
       </div>
 
@@ -108,8 +120,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                      <a href="mailto:younesstizi7@gmail.com" className="text-blue-600 hover:text-blue-700 font-medium">
-                        younesstizi7@gmail.com
+                      <a href="mailto:contact@tizi-consulting.fr" className="text-blue-600 hover:text-blue-700 font-medium">
+                        contact@tizi-consulting.fr
                       </a>
                     </div>
                   </div>
