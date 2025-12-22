@@ -5,7 +5,11 @@ import { AuthProvider } from '@/components/AuthProvider';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  fallback: ['system-ui', 'arial'],
+});
 
 export const metadata: Metadata = {
   title: 'EduElite - Plateforme de Gestion Scolaire d\'Excellence | Tizi-Consulting',

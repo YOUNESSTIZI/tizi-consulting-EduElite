@@ -48,7 +48,10 @@ export async function GET(
     headers.set('Content-Security-Policy', "default-src 'self'");
     headers.set('X-Frame-Options', 'SAMEORIGIN');
 
-    return new NextResponse(fileBuffer, {
+    // Convertir Buffer en Uint8Array pour compatibilité TypeScript avec NextResponse
+    const uint8Array = new Uint8Array(fileBuffer);
+    
+    return new NextResponse(uint8Array, {
       status: 200,
       headers,
     });
