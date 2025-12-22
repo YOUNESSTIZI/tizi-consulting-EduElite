@@ -29,8 +29,8 @@ export default function Navbar() {
       <div className="relative container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link 
-            href="/" 
+            <Link
+              href="/"
             className="flex items-center gap-3 group"
           >
             <div className="relative">
@@ -45,8 +45,8 @@ export default function Navbar() {
               </span>
               <span className="text-xs text-gray-500 hidden sm:block">Gestion Scolaire d'Excellence</span>
             </div>
-          </Link>
-
+            </Link>
+            
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-2">
             {user ? (
@@ -72,13 +72,13 @@ export default function Navbar() {
                 </button>
               </>
             ) : (
-              <Link
+            <Link
                 href="/contact"
                 className="group relative px-6 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:from-blue-500 hover:to-purple-500 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-2"
-              >
+            >
                 <Calendar className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                 <span>Rendez-vous</span>
-              </Link>
+            </Link>
             )}
           </div>
 
