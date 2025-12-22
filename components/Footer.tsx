@@ -36,13 +36,11 @@ export default function Footer() {
             <h4 className="text-lg font-semibold text-white">Contact</h4>
             <div className="space-y-3 text-gray-400 text-sm">
               <a 
-                href="https://www.tizi-consulting.fr" 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href="mailto:contact@tizi-consulting.fr"
                 className="flex items-center gap-2 hover:text-white transition-colors group md:justify-end"
               >
-                <span className="w-1 h-1 bg-gray-400 rounded-full group-hover:bg-blue-400 transition-colors"></span>
-                <span>www.tizi-consulting.fr</span>
+                <Mail className="w-4 h-4 group-hover:text-blue-400 transition-colors" />
+                <span>contact@tizi-consulting.fr</span>
               </a>
               <a 
                 href="tel:+33745680679"
@@ -50,6 +48,15 @@ export default function Footer() {
               >
                 <Phone className="w-4 h-4 group-hover:text-blue-400 transition-colors" />
                 <span>+33 7 45 68 06 79</span>
+              </a>
+              <a 
+                href="https://www.tizi-consulting.fr" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-white transition-colors group md:justify-end"
+              >
+                <span className="w-1 h-1 bg-gray-400 rounded-full group-hover:bg-blue-400 transition-colors"></span>
+                <span>www.tizi-consulting.fr</span>
               </a>
             </div>
           </div>
