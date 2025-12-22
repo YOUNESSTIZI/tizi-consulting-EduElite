@@ -130,15 +130,15 @@ export async function POST(request: NextRequest) {
         
         <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 12px;">
           <p>Service client disponible 24/7</p>
-          <p>Email : younesstizi7@gmail.com | Téléphone : +33 7 45 68 06 79</p>
+          <p>Email : contact@tizi-consulting.fr | Téléphone : +33 7 45 68 06 79</p>
         </div>
       </div>
     `;
 
     // Envoyer l'email à l'administrateur
     const adminEmailResult = await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL || 'EduElite <younesstizi7@gmail.com>',
-      to: process.env.CONTACT_EMAIL || 'younesstizi7@gmail.com',
+      from: process.env.RESEND_FROM_EMAIL || 'EduElite <contact@tizi-consulting.fr>',
+      to: process.env.CONTACT_EMAIL || 'contact@tizi-consulting.fr',
       replyTo: email,
       subject: `Nouvelle demande de contact - ${name} (${school})`,
       html: emailContent,
@@ -154,7 +154,7 @@ export async function POST(request: NextRequest) {
 
     // Envoyer l'email de confirmation au client
     const confirmationEmailResult = await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL || 'EduElite <younesstizi7@gmail.com>',
+      from: process.env.RESEND_FROM_EMAIL || 'EduElite <contact@tizi-consulting.fr>',
       to: email,
       subject: 'Merci pour votre demande - EduElite',
       html: confirmationEmailContent,
