@@ -137,7 +137,7 @@ export async function POST(request: NextRequest) {
 
     // Envoyer l'email à l'administrateur
     const adminEmailResult = await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL || 'EduElite <onboarding@resend.dev>',
+      from: process.env.RESEND_FROM_EMAIL || 'EduElite <younesstizi7@gmail.com>',
       to: process.env.CONTACT_EMAIL || 'younesstizi7@gmail.com',
       replyTo: email,
       subject: `Nouvelle demande de contact - ${name} (${school})`,
@@ -154,7 +154,7 @@ export async function POST(request: NextRequest) {
 
     // Envoyer l'email de confirmation au client
     const confirmationEmailResult = await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL || 'EduElite <onboarding@resend.dev>',
+      from: process.env.RESEND_FROM_EMAIL || 'EduElite <younesstizi7@gmail.com>',
       to: email,
       subject: 'Merci pour votre demande - EduElite',
       html: confirmationEmailContent,

@@ -9,10 +9,13 @@ Créez un fichier `.env.local` à la racine du projet avec les variables suivant
 # Obtenez votre clé API sur https://resend.com/api-keys
 RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxx
 
-# Email d'expéditeur (doit être vérifié dans Resend)
-# Pour commencer, utilisez l'email par défaut de Resend
-# Une fois votre domaine vérifié, changez pour: EduElite <contact@tizi-consulting.fr>
-RESEND_FROM_EMAIL=EduElite <onboarding@resend.dev>
+# Email d'expéditeur
+# Option 1: Utiliser votre Gmail (recommandé pour commencer)
+RESEND_FROM_EMAIL=EduElite <younesstizi7@gmail.com>
+# Option 2: Utiliser l'email par défaut de Resend (si Gmail ne fonctionne pas)
+# RESEND_FROM_EMAIL=EduElite <onboarding@resend.dev>
+# Option 3: Une fois votre domaine vérifié dans Resend
+# RESEND_FROM_EMAIL=EduElite <contact@tizi-consulting.fr>
 
 # Email de réception des demandes de contact
 CONTACT_EMAIL=younesstizi7@gmail.com
