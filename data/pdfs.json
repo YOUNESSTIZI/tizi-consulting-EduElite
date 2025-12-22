@@ -1,0 +1,21 @@
+[
+  {
+    "id": "demo-1",
+    "title": "Mathématiques CP - Addition et Soustraction",
+    "description": "Introduction aux opérations de base pour les élèves de CP",
+    "level": "CP",
+    "subject": "Mathématiques",
+    "filename": "livre.pdf",
+    "uploadDate": "2024-01-15T10:00:00Z"
+  },
+  {
+    "id": "demo-2",
+    "title": "Français CE1 - Grammaire de base",
+    "description": "Cours de grammaire pour les élèves de CE1",
+    "level": "CE1",
+    "subject": "Français",
+    "filename": "livre.pdf",
+    "uploadDate": "2024-01-16T10:00:00Z"
+  }
+]
+

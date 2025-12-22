@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* Styles pour le lecteur PDF */
+.pdf-viewer-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  background: #525252;
+}
+
+.pdf-viewer-container canvas {
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Désactiver le menu contextuel et la sélection sur les PDFs */
+.pdf-viewer-container canvas {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Cacher les contrôles de téléchargement */
+.pdf-viewer-container * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+
