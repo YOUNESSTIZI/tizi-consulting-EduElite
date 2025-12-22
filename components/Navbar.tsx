@@ -77,7 +77,7 @@ export default function Navbar() {
                 className="group relative px-6 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:from-blue-500 hover:to-purple-500 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-2"
             >
                 <Calendar className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                <span>Rendez-vous</span>
+                <span>Planifier un Rendez-vous</span>
             </Link>
             )}
           </div>
@@ -128,7 +128,7 @@ export default function Navbar() {
                   className="mt-2 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:from-blue-500 hover:to-purple-500 transition-all shadow-lg flex items-center justify-center gap-2"
               >
                   <Calendar className="w-5 h-5" />
-                  <span>Rendez-vous</span>
+                  <span>Planifier un Rendez-vous</span>
               </Link>
             )}
           </div>
