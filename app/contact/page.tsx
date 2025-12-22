@@ -75,7 +75,7 @@ export default function ContactPage() {
       <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 text-white py-16 relative">
         <div className="container mx-auto px-4">
           {/* Bouton retour à l'accueil */}
-          <div className="mb-8 flex justify-start">
+          <div className="mb-8 flex justify-end">
             <Link
               href="/"
               className="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white px-5 py-2.5 rounded-xl font-semibold transition-all duration-300 backdrop-blur-sm border border-white/30 hover:scale-105 shadow-lg"
