@@ -21,6 +21,10 @@ export default function Home() {
           />
           {/* Gradient Overlay for better text readability */}
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 via-blue-800/40 to-purple-900/50"></div>
+          {/* Radial light effect at center for better text visibility */}
+          <div className="absolute inset-0" style={{
+            background: 'radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 40%, transparent 70%)',
+          }}></div>
           {/* Animated background pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0" style={{
