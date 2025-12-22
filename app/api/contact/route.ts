@@ -1,10 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: NextRequest) {
   try {
+    // Vérifier que la clé API est présente
+    if (!process.env.RESEND_API_KEY) {
+      console.error('RESEND_API_KEY is not configured');
+      return NextResponse.json(
+        { error: 'Configuration serveur manquante. Veuillez contacter le support.' },
+        { status: 500 }
+      );
+    }
+
+    // Initialiser Resend avec la clé API
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const body = await request.json();
     const {
       name,
