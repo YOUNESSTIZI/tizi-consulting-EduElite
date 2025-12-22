@@ -29,10 +29,12 @@ Pour utiliser votre propre domaine d'email (ex: `contact@tizi-consulting.fr`) :
 1. Allez dans **Domains** dans Resend
 2. Cliquez sur **Add Domain**
 3. Entrez votre domaine (ex: `tizi-consulting.fr`)
-4. Suivez les instructions pour ajouter les enregistrements DNS
-5. Attendez la vérification (peut prendre quelques minutes)
+4. Suivez les instructions pour ajouter les enregistrements DNS dans OVH
+5. Attendez la vérification (peut prendre 15 minutes à 48 heures)
 
-**Note** : Pour l'instant, utilisez l'email par défaut de Resend : `onboarding@resend.dev` ou votre email Gmail : `younesstizi7@gmail.com`
+**Note** : Consultez le guide détaillé dans `docs/RESEND_DOMAIN_VERIFICATION.md` pour les instructions complètes étape par étape.
+
+**En attendant la vérification** : Utilisez `contact@tizi-consulting.fr` (le code est déjà configuré pour l'utiliser une fois le domaine vérifié)
 
 ### 4. Configurer les variables d'environnement
 
