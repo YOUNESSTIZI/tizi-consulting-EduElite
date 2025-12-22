@@ -15,9 +15,9 @@ export const metadata: Metadata = {
   title: 'EduElite - Plateforme de Gestion Scolaire d\'Excellence | Tizi-Consulting',
   description: 'EduElite : Solution complète de gestion scolaire d\'excellence. Planning, administration, ressources pédagogiques sécurisées, gestion des élèves, parents et professeurs',
   icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
+    icon: '/images/icon_siteWeb.png',
+    shortcut: '/images/icon_siteWeb.png',
+    apple: '/images/icon_siteWeb.png',
   },
 };
 
