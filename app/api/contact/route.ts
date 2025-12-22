@@ -144,6 +144,14 @@ export async function POST(request: NextRequest) {
       html: emailContent,
     });
 
+    if (adminEmailResult.error) {
+      console.error('Erreur Resend (admin email):', adminEmailResult.error);
+      return NextResponse.json(
+        { error: `Erreur lors de l'envoi de l'email: ${adminEmailResult.error.message || 'Erreur inconnue'}` },
+        { status: 500 }
+      );
+    }
+
     // Envoyer l'email de confirmation au client
     const confirmationEmailResult = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL || 'EduElite <onboarding@resend.dev>',
@@ -152,11 +160,17 @@ export async function POST(request: NextRequest) {
       html: confirmationEmailContent,
     });
 
-    if (adminEmailResult.error || confirmationEmailResult.error) {
-      console.error('Erreur Resend:', adminEmailResult.error || confirmationEmailResult.error);
+    if (confirmationEmailResult.error) {
+      console.error('Erreur Resend (confirmation email):', confirmationEmailResult.error);
+      // L'email admin a été envoyé avec succès, mais la confirmation a échoué
+      // On retourne quand même un succès partiel
       return NextResponse.json(
-        { error: 'Erreur lors de l\'envoi de l\'email' },
-        { status: 500 }
+        { 
+          success: true,
+          message: 'Votre demande a été reçue. Un problème est survenu lors de l\'envoi de l\'email de confirmation, mais votre demande a bien été transmise.',
+          warning: 'Email de confirmation non envoyé'
+        },
+        { status: 200 }
       );
     }
 
