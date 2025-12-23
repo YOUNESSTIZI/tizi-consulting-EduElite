@@ -55,3 +55,42 @@ body {
   -webkit-user-select: none;
 }
 
+/* Styles spécifiques pour Samsung Galaxy S21 Plus et téléphones similaires (360-415px) */
+@media (min-width: 360px) and (max-width: 415px) {
+  /* Amélioration de l'espacement général */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Espacement amélioré pour les sections */
+  section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  /* Amélioration de la lisibilité des textes sur petits écrans */
+  h1 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  /* Espacement amélioré pour les grilles */
+  .grid {
+    gap: 1rem;
+  }
+}
+
+/* Optimisations supplémentaires pour écrans moyens (415-480px) */
+@media (min-width: 415px) and (max-width: 480px) {
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
