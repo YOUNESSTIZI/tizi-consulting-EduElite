@@ -96,9 +96,9 @@ export default function DemoPage() {
         'Recherche intuitive et rapide'
       ],
       content: (
-        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-blue-200">
+        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl -mx-4 sm:-mx-6 md:-mx-8 p-4 sm:p-6 md:p-8 border-2 border-blue-200">
           {/* Section Livres et Exercices disponibles */}
-          <div className="bg-white rounded-xl shadow-xl p-4 sm:p-6 mb-4">
+          <div className="bg-white rounded-xl shadow-xl p-3 sm:p-4 md:p-6 mb-4">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center">
                 <BookOpen className="w-6 h-6 text-white" />
@@ -127,15 +127,17 @@ export default function DemoPage() {
                       <BookOpen className="w-10 h-10 text-white" />
                     </div>
                     <div className="text-center">
-                      <div className="text-sm font-semibold text-gray-900 mb-1">{book.title}</div>
-                      <div className="text-xs text-gray-600 mb-2">{book.subject}</div>
-                      <div className="flex items-center justify-center gap-1 text-xs text-gray-500">
-                        <FileTextIcon className="w-3 h-3" />
+                      <div className="text-sm font-semibold text-gray-900 mb-1 line-clamp-2 break-words">{book.title}</div>
+                      <div className="text-xs text-gray-600 mb-2 line-clamp-1 break-words">{book.subject}</div>
+                      <div className="flex items-center justify-center gap-1 text-xs text-gray-500 mb-2">
+                        <FileTextIcon className="w-3 h-3 flex-shrink-0" />
                         <span>{book.pages} pages</span>
                       </div>
-                      <div className="mt-2 inline-flex items-center gap-1 bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-medium">
-                        <CheckCircle className="w-3 h-3" />
-                        <span>Disponible</span>
+                      <div className="flex justify-center">
+                        <div className="inline-flex items-center gap-1 bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-medium">
+                          <CheckCircle className="w-3 h-3 flex-shrink-0" />
+                          <span>Disponible</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -2677,17 +2679,37 @@ export default function DemoPage() {
         <div className="max-w-6xl mx-auto">
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
             {/* Step Header */}
-            <div className="bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 text-white p-8 shadow-lg">
-              <div className="flex items-start gap-6">
-                <div className="bg-white/20 backdrop-blur-sm p-4 rounded-2xl">
+            <div className="bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 text-white p-6 sm:p-8 shadow-lg">
+              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                <div className="bg-white/20 backdrop-blur-sm p-3 sm:p-4 rounded-2xl flex-shrink-0">
                   {currentDemo.icon}
                 </div>
-                <div className="flex-1">
-                  <div className="text-sm font-medium text-blue-100 mb-2">
+                <div className="flex-1 min-w-0">
+                  <div className="text-xs sm:text-sm font-medium text-blue-100 mb-2">
                     Étape {currentStep + 1} sur {demoSteps.length}
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-3">{currentDemo.title}</h2>
-                  <p className="text-lg text-blue-100">{currentDemo.description}</p>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3">{currentDemo.title}</h2>
+                  {currentDemo.id === 'documentation' ? (
+                    <div className="space-y-2">
+                      <p className="text-sm sm:text-base md:text-lg text-blue-100 leading-relaxed">{currentDemo.description}</p>
+                      <div className="flex flex-wrap gap-2 mt-3">
+                        <span className="inline-flex items-center gap-1 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs sm:text-sm">
+                          <Shield className="w-3 h-3 sm:w-4 sm:h-4" />
+                          Protection maximale
+                        </span>
+                        <span className="inline-flex items-center gap-1 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs sm:text-sm">
+                          <FileTextIcon className="w-3 h-3 sm:w-4 sm:h-4" />
+                          Documents organisés
+                        </span>
+                        <span className="inline-flex items-center gap-1 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs sm:text-sm">
+                          <Lock className="w-3 h-3 sm:w-4 sm:h-4" />
+                          Lecture sécurisée
+                        </span>
+                      </div>
+                    </div>
+                  ) : (
+                    <p className="text-sm sm:text-base md:text-lg text-blue-100">{currentDemo.description}</p>
+                  )}
                 </div>
               </div>
             </div>
