@@ -628,18 +628,18 @@ export default function DemoPage() {
 
           {/* Section Importation */}
           <div className="bg-white rounded-xl shadow-xl p-4 sm:p-6 mb-4">
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-3">
-                <div className="bg-gradient-to-br from-green-500 to-emerald-600 p-3 rounded-xl">
-                  <Upload className="w-6 h-6 text-white" />
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-3 sm:gap-0">
+              <div className="flex items-center gap-3 flex-1">
+                <div className="bg-gradient-to-br from-green-500 to-emerald-600 p-2 sm:p-3 rounded-xl flex-shrink-0">
+                  <Upload className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
-                <div>
-                  <h4 className="font-bold text-gray-900">Importation de Documents</h4>
-                  <p className="text-sm text-gray-600">Ajoutez vos cours, exercices, devoirs et examens</p>
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-bold text-gray-900 text-base sm:text-lg">Importation de Documents</h4>
+                  <p className="text-xs sm:text-sm text-gray-600">Ajoutez vos cours, exercices, devoirs et examens</p>
                 </div>
               </div>
-              <button className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-lg font-semibold hover:from-green-600 hover:to-emerald-700 transition-all flex items-center gap-2">
-                <Upload className="w-4 h-4" />
+              <button className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2.5 sm:py-2 rounded-lg font-semibold hover:from-green-600 hover:to-emerald-700 transition-all flex items-center justify-center gap-2 w-full sm:w-auto text-sm sm:text-base">
+                <Upload className="w-4 h-4 flex-shrink-0" />
                 Importer
               </button>
             </div>
