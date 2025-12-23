@@ -671,32 +671,29 @@ export default function DemoPage() {
           {/* Liste des documents avec gestion d'accès */}
           <div className="bg-white rounded-xl shadow-xl p-4 sm:p-6 mb-4">
             <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-              <button className="p-1.5 hover:bg-gray-100 rounded-lg transition-all flex-shrink-0 -ml-1">
-                <Edit className="w-4 h-4 text-gray-600" />
-              </button>
-              <FileTextIcon className="w-5 h-5 text-blue-600 flex-shrink-0" />
-              <span className="flex-1 min-w-0 break-words">Mes Documents - Classe {selectedClassFilter}</span>
+              <FileTextIcon className="w-5 h-5 text-blue-600" />
+              Mes Documents - Classe {selectedClassFilter}
             </h4>
             
             <div className="space-y-3">
               {/* Document avec accès partagé */}
               <div className="bg-green-50 border-2 border-green-200 rounded-lg p-4">
                 <div className="flex items-start justify-between mb-2">
-                  <div className="flex items-center gap-3 flex-1">
-                    <FileTextIcon className="w-5 h-5 text-green-600" />
-                    <div className="flex-1">
-                      <div className="font-semibold text-gray-900">Cours - Addition</div>
-                      <div className="text-xs text-gray-600">Mathématiques • CE1-A • Cours</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="flex items-center gap-1 bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-medium">
-                      <Eye className="w-3 h-3" />
-                      <span>Partagé</span>
-                    </div>
-                    <button className="p-2 hover:bg-green-100 rounded-lg transition-all">
+                  <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                    <button className="p-1.5 hover:bg-green-100 rounded-lg transition-all flex-shrink-0 -ml-1">
                       <Edit className="w-4 h-4 text-gray-600" />
                     </button>
+                    <FileTextIcon className="w-5 h-5 text-green-600 flex-shrink-0" />
+                    <div className="flex-1 min-w-0">
+                      <div className="font-semibold text-gray-900 break-words">Cours - Addition</div>
+                      <div className="text-xs text-gray-600 break-words">Mathématiques • CE1-A • Cours</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 flex-shrink-0 ml-2">
+                    <div className="flex items-center gap-1 bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap">
+                      <Eye className="w-3 h-3 flex-shrink-0" />
+                      <span>Partagé</span>
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 mt-3">
@@ -714,21 +711,21 @@ export default function DemoPage() {
               {/* Document avec accès privé */}
               <div className="bg-gray-50 border-2 border-gray-200 rounded-lg p-4">
                 <div className="flex items-start justify-between mb-2">
-                  <div className="flex items-center gap-3 flex-1">
-                    <FileTextIcon className="w-5 h-5 text-gray-600" />
-                    <div className="flex-1">
-                      <div className="font-semibold text-gray-900">Examen - Contrôle Math</div>
-                      <div className="text-xs text-gray-600">Mathématiques • CE1-A • Examen</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="flex items-center gap-1 bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-xs font-medium">
-                      <EyeOff className="w-3 h-3" />
-                      <span>Privé</span>
-                    </div>
-                    <button className="p-2 hover:bg-gray-200 rounded-lg transition-all">
+                  <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                    <button className="p-1.5 hover:bg-gray-200 rounded-lg transition-all flex-shrink-0 -ml-1">
                       <Edit className="w-4 h-4 text-gray-600" />
                     </button>
+                    <FileTextIcon className="w-5 h-5 text-gray-600 flex-shrink-0" />
+                    <div className="flex-1 min-w-0">
+                      <div className="font-semibold text-gray-900 break-words">Examen - Contrôle Math</div>
+                      <div className="text-xs text-gray-600 break-words">Mathématiques • CE1-A • Examen</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 flex-shrink-0 ml-2">
+                    <div className="flex items-center gap-1 bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap">
+                      <EyeOff className="w-3 h-3 flex-shrink-0" />
+                      <span>Privé</span>
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 mt-3">
@@ -746,22 +743,22 @@ export default function DemoPage() {
               {/* Exercice en attente de correction */}
               <div className="bg-yellow-50 border-2 border-yellow-200 rounded-lg p-4">
                 <div className="flex items-start justify-between mb-2">
-                  <div className="flex items-center gap-3 flex-1">
-                    <FileTextIcon className="w-5 h-5 text-yellow-600" />
-                    <div className="flex-1">
-                      <div className="font-semibold text-gray-900">Exercices - Soustraction</div>
-                      <div className="text-xs text-gray-600">Mathématiques • CE1-A • Exercice</div>
+                  <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                    <button className="p-1.5 hover:bg-yellow-100 rounded-lg transition-all flex-shrink-0 -ml-1">
+                      <Edit className="w-4 h-4 text-gray-600" />
+                    </button>
+                    <FileTextIcon className="w-5 h-5 text-yellow-600 flex-shrink-0" />
+                    <div className="flex-1 min-w-0">
+                      <div className="font-semibold text-gray-900 break-words">Exercices - Soustraction</div>
+                      <div className="text-xs text-gray-600 break-words">Mathématiques • CE1-A • Exercice</div>
                       <div className="text-xs text-yellow-700 mt-1 font-medium">15 copies à corriger</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <div className="flex items-center gap-1 bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full text-xs font-medium">
-                      <Clock className="w-3 h-3" />
+                  <div className="flex items-center gap-2 flex-shrink-0 ml-2">
+                    <div className="flex items-center gap-1 bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap">
+                      <Clock className="w-3 h-3 flex-shrink-0" />
                       <span>En attente</span>
                     </div>
-                    <button className="p-2 hover:bg-yellow-100 rounded-lg transition-all">
-                      <Edit className="w-4 h-4 text-gray-600" />
-                    </button>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 mt-3">
