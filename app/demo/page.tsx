@@ -2597,24 +2597,24 @@ export default function DemoPage() {
       {/* Header */}
       <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 text-white py-6">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-3xl font-bold mb-2">Visite Guidée d'EduElite</h1>
-              <p className="text-blue-100">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="flex-1 min-w-0">
+              <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">Visite Guidée d'EduElite</h1>
+              <p className="text-sm sm:text-base text-blue-100">
                 Profil: <span className="font-semibold capitalize">{selectedRole === 'eleve' ? 'Élève' : selectedRole === 'parent' ? 'Parent' : selectedRole === 'professeur' ? 'Professeur' : 'Administrateur'}</span>
               </p>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 w-full sm:w-auto">
               <button
                 onClick={() => setSelectedRole(null)}
-                className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 hover:from-blue-500 hover:via-purple-500 hover:to-blue-500 px-6 py-3 rounded-xl font-semibold transition-all backdrop-blur-sm text-white shadow-lg hover:shadow-xl flex items-center gap-2 border border-white/20"
+                className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 hover:from-blue-500 hover:via-purple-500 hover:to-blue-500 px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-xl font-semibold transition-all backdrop-blur-sm text-white shadow-lg hover:shadow-xl flex items-center justify-center gap-2 border border-white/20 text-sm sm:text-base whitespace-nowrap"
               >
-                <GraduationCap className="w-5 h-5" />
-                Changer de profil
+                <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                <span>Changer de profil</span>
               </button>
               <Link
                 href="/"
-                className="bg-white/20 hover:bg-white/30 px-6 py-3 rounded-xl font-semibold transition-all backdrop-blur-sm"
+                className="bg-white/20 hover:bg-white/30 px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-xl font-semibold transition-all backdrop-blur-sm text-center text-sm sm:text-base whitespace-nowrap"
               >
                 Retour à l'accueil
               </Link>

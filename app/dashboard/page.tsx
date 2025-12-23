@@ -117,7 +117,7 @@ export default function DashboardPage() {
       {/* Livres récents */}
       {stats.recentBooks.length > 0 && (
         <div className="bg-white rounded-xl shadow-lg p-4 sm:p-5 md:p-6">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Livres disponibles</h2>
+          <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-4">Livres disponibles</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {stats.recentBooks.map((book: any) => (
               <Link
@@ -125,8 +125,8 @@ export default function DashboardPage() {
                 href={`/books/${book.id}`}
                 className="p-3 sm:p-4 border border-gray-200 rounded-lg hover:border-primary-600 hover:shadow-md transition-all"
               >
-                <h3 className="font-semibold text-sm sm:text-base text-gray-900 mb-1 sm:mb-2 line-clamp-2">{book.title}</h3>
-                <p className="text-xs sm:text-sm text-gray-600">{book.level} - {book.subject}</p>
+                <h3 className="font-semibold text-sm sm:text-base text-gray-900 mb-1 sm:mb-2 line-clamp-2 break-words">{book.title}</h3>
+                <p className="text-xs sm:text-sm text-gray-600 break-words line-clamp-1">{book.level} - {book.subject}</p>
               </Link>
             ))}
           </div>

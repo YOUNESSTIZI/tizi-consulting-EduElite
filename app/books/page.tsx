@@ -153,14 +153,14 @@ export default function BooksPage() {
               <div className="p-3 sm:p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <GraduationCap className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary-600 flex-shrink-0" />
-                  <span className="text-xs font-semibold text-primary-600">{book.level}</span>
+                  <span className="text-xs font-semibold text-primary-600 truncate">{book.level}</span>
                 </div>
-                <h3 className="font-bold text-base sm:text-lg text-gray-900 mb-2 line-clamp-2">
+                <h3 className="font-bold text-base sm:text-lg text-gray-900 mb-2 line-clamp-2 break-words">
                   {book.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3">{book.subject}</p>
+                <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 break-words line-clamp-1">{book.subject}</p>
                 {book.description && (
-                  <p className="text-xs sm:text-sm text-gray-500 line-clamp-2 mb-2">{book.description}</p>
+                  <p className="text-xs sm:text-sm text-gray-500 line-clamp-2 mb-2 break-words">{book.description}</p>
                 )}
                 <div className="mt-3 sm:mt-4 text-primary-600 font-medium text-xs sm:text-sm group-hover:underline">
                   Lire le livre →
