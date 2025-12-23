@@ -2715,8 +2715,8 @@ export default function DemoPage() {
             </div>
 
             {/* Demo Content */}
-            <div className="p-8">
-              <div className="mb-8">
+            <div className="p-4 sm:p-6 md:p-8">
+              <div className="mb-6 sm:mb-8">
                 {currentDemo.content}
               </div>
 
@@ -2731,49 +2731,55 @@ export default function DemoPage() {
               </div>
 
               {/* Navigation */}
-              <div className="flex items-center justify-between pt-6 border-t border-gray-200">
-                <button
-                  onClick={prevStep}
-                  disabled={currentStep === 0}
-                  className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                  Précédent
-                </button>
-
-                <div className="flex gap-2">
-                  {demoSteps.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => goToStep(index)}
-                      className={`w-3 h-3 rounded-full transition-all ${
-                        index === currentStep
-                          ? 'bg-blue-600 w-8'
-                          : index < currentStep
-                          ? 'bg-green-500'
-                          : 'bg-gray-300'
-                      }`}
-                    />
-                  ))}
+              <div className="pt-6 border-t border-gray-200">
+                {/* Indicateurs de progression - centrés sur mobile */}
+                <div className="flex justify-center mb-4 sm:mb-0">
+                  <div className="flex gap-2">
+                    {demoSteps.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => goToStep(index)}
+                        className={`w-3 h-3 rounded-full transition-all ${
+                          index === currentStep
+                            ? 'bg-blue-600 w-8'
+                            : index < currentStep
+                            ? 'bg-green-500'
+                            : 'bg-gray-300'
+                        }`}
+                      />
+                    ))}
+                  </div>
                 </div>
 
-                {currentStep < demoSteps.length - 1 ? (
+                {/* Boutons de navigation - centrés sur mobile, espacés sur desktop */}
+                <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 sm:gap-0">
                   <button
-                    onClick={nextStep}
-                    className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-500 hover:to-purple-500 transition-all shadow-lg hover:shadow-xl"
+                    onClick={prevStep}
+                    disabled={currentStep === 0}
+                    className="flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base w-full sm:w-auto justify-center sm:justify-start"
                   >
-                    Suivant
-                    <ChevronRight className="w-5 h-5" />
+                    <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+                    Précédent
                   </button>
-                ) : (
-                  <Link
-                    href="/contact"
-                    className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 hover:from-yellow-300 hover:to-orange-300 transition-all shadow-lg hover:shadow-xl"
-                  >
-                    Planifier un Rendez-vous
-                    <Play className="w-5 h-5" />
-                  </Link>
-                )}
+
+                  {currentStep < demoSteps.length - 1 ? (
+                    <button
+                      onClick={nextStep}
+                      className="flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-500 hover:to-purple-500 transition-all shadow-lg hover:shadow-xl text-sm sm:text-base w-full sm:w-auto justify-center sm:justify-start"
+                    >
+                      Suivant
+                      <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                    </button>
+                  ) : (
+                    <Link
+                      href="/contact"
+                      className="flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 hover:from-yellow-300 hover:to-orange-300 transition-all shadow-lg hover:shadow-xl text-sm sm:text-base w-full sm:w-auto justify-center sm:justify-start"
+                    >
+                      Planifier un Rendez-vous
+                      <Play className="w-4 h-4 sm:w-5 sm:h-5" />
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
           </div>
