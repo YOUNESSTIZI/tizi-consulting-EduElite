@@ -671,8 +671,11 @@ export default function DemoPage() {
           {/* Liste des documents avec gestion d'accès */}
           <div className="bg-white rounded-xl shadow-xl p-4 sm:p-6 mb-4">
             <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-              <FileTextIcon className="w-5 h-5 text-blue-600" />
-              Mes Documents - Classe {selectedClassFilter}
+              <button className="p-1.5 hover:bg-gray-100 rounded-lg transition-all flex-shrink-0 -ml-1">
+                <Edit className="w-4 h-4 text-gray-600" />
+              </button>
+              <FileTextIcon className="w-5 h-5 text-blue-600 flex-shrink-0" />
+              <span className="flex-1 min-w-0 break-words">Mes Documents - Classe {selectedClassFilter}</span>
             </h4>
             
             <div className="space-y-3">
@@ -791,8 +794,8 @@ export default function DemoPage() {
         'Correction des exercices et examens'
       ],
       content: (
-        <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border-2 border-green-200">
-          <div className="bg-white rounded-xl shadow-xl p-4 sm:p-6 mb-4">
+        <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-green-200">
+          <div className="bg-white rounded-xl shadow-xl p-4 sm:p-6 mb-4 -mx-2 sm:-mx-4 md:-mx-6">
             {/* En-tête professeur */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
               <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
