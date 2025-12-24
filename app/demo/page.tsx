@@ -396,16 +396,21 @@ export default function DemoPage() {
         <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-green-200">
           <div className="bg-white rounded-xl shadow-xl p-4 sm:p-6 mb-4 -mx-2 sm:-mx-4 md:-mx-6">
             {/* En-tête élève */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
-                <Users className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
+            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <Users className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
               <div className="flex-1 min-w-0">
-                <h4 className="font-bold text-gray-900 text-base sm:text-lg">Sophie Martin</h4>
-                <p className="text-xs sm:text-sm text-gray-600 break-words">Classe: CE1-A | N°: 2025-001</p>
+                <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+                  <h4 className="font-bold text-gray-900 text-sm sm:text-lg whitespace-nowrap">Sophie Martin</h4>
+                  <span className="text-xs sm:text-sm text-gray-600 whitespace-nowrap">•</span>
+                  <span className="text-xs sm:text-sm text-gray-600 whitespace-nowrap">CE1-A</span>
+                  <span className="text-xs sm:text-sm text-gray-600 whitespace-nowrap">•</span>
+                  <span className="text-xs sm:text-sm text-gray-600 whitespace-nowrap">N°: 2025-001</span>
+                </div>
               </div>
               {/* Notification badge */}
-              <div className="relative self-start sm:self-auto">
+              <div className="relative flex-shrink-0">
                 <Bell className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
                 <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
                   <span className="text-xs text-white font-bold">2</span>
@@ -414,30 +419,30 @@ export default function DemoPage() {
             </div>
 
             {/* Statistiques principales */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <div className="bg-blue-50 rounded-lg p-3 sm:p-4 border-l-4 border-blue-500">
-                <div className="flex items-center gap-2 mb-1">
-                  <BarChart3 className="w-4 h-4 text-blue-600 flex-shrink-0" />
-                  <div className="text-xs text-gray-600">Absences</div>
+            <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-6">
+              <div className="bg-blue-50 rounded-lg p-2 sm:p-3 md:p-4 border-l-4 border-blue-500">
+                <div className="flex items-center gap-1 sm:gap-2 mb-0.5 sm:mb-1">
+                  <BarChart3 className="w-3 h-3 sm:w-4 sm:h-4 text-blue-600 flex-shrink-0" />
+                  <div className="text-[10px] sm:text-xs text-gray-600 truncate">Absences</div>
                 </div>
-                <div className="text-xl sm:text-2xl font-bold text-blue-600">2</div>
-                <div className="text-xs text-gray-500">Ce trimestre</div>
+                <div className="text-base sm:text-xl md:text-2xl font-bold text-blue-600">2</div>
+                <div className="text-[10px] sm:text-xs text-gray-500 truncate">Ce trimestre</div>
               </div>
-              <div className="bg-green-50 rounded-lg p-3 sm:p-4 border-l-4 border-green-500">
-                <div className="flex items-center gap-2 mb-1">
-                  <Award className="w-4 h-4 text-green-600 flex-shrink-0" />
-                  <div className="text-xs text-gray-600">Moyenne</div>
+              <div className="bg-green-50 rounded-lg p-2 sm:p-3 md:p-4 border-l-4 border-green-500">
+                <div className="flex items-center gap-1 sm:gap-2 mb-0.5 sm:mb-1">
+                  <Award className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0" />
+                  <div className="text-[10px] sm:text-xs text-gray-600 truncate">Moyenne</div>
                 </div>
-                <div className="text-xl sm:text-2xl font-bold text-green-600">15.5/20</div>
-                <div className="text-xs text-gray-500">Générale</div>
+                <div className="text-base sm:text-xl md:text-2xl font-bold text-green-600">15.5/20</div>
+                <div className="text-[10px] sm:text-xs text-gray-500 truncate">Générale</div>
               </div>
-              <div className="bg-purple-50 rounded-lg p-3 sm:p-4 border-l-4 border-purple-500">
-                <div className="flex items-center gap-2 mb-1">
-                  <FileTextIcon className="w-4 h-4 text-purple-600 flex-shrink-0" />
-                  <div className="text-xs text-gray-600">Exercices</div>
+              <div className="bg-purple-50 rounded-lg p-2 sm:p-3 md:p-4 border-l-4 border-purple-500">
+                <div className="flex items-center gap-1 sm:gap-2 mb-0.5 sm:mb-1">
+                  <FileTextIcon className="w-3 h-3 sm:w-4 sm:h-4 text-purple-600 flex-shrink-0" />
+                  <div className="text-[10px] sm:text-xs text-gray-600 truncate">Exercices</div>
                 </div>
-                <div className="text-xl sm:text-2xl font-bold text-purple-600">8</div>
-                <div className="text-xs text-gray-500">En attente</div>
+                <div className="text-base sm:text-xl md:text-2xl font-bold text-purple-600">8</div>
+                <div className="text-[10px] sm:text-xs text-gray-500 truncate">En attente</div>
               </div>
             </div>
 
