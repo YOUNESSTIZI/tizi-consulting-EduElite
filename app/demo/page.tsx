@@ -974,49 +974,49 @@ export default function DemoPage() {
       ],
       content: (
         <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-blue-200">
-          <div className="bg-white rounded-xl shadow-xl p-4 sm:p-6 mb-4">
+          <div className="bg-white rounded-xl shadow-xl p-3 sm:p-4 md:p-6 mb-4 -mx-2 sm:-mx-4 md:-mx-6">
             {/* En-tête avec filtre */}
-            <div className="flex items-center justify-between mb-6">
-              <h4 className="font-bold text-gray-900 text-lg flex items-center gap-2">
-                <Users className="w-5 h-5 text-blue-600" />
-                Mes Élèves
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 mb-4 sm:mb-6">
+              <h4 className="font-bold text-gray-900 text-base sm:text-lg flex items-center gap-2">
+                <Users className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0" />
+                <span>Mes Élèves</span>
               </h4>
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full sm:w-auto">
-                <select className="px-4 py-2 border-2 border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 w-full sm:w-auto">
+                <select className="px-3 sm:px-4 py-1.5 sm:py-2 border-2 border-gray-200 rounded-lg text-xs sm:text-sm focus:outline-none focus:border-blue-500 w-full sm:w-auto">
                   <option value="all">Toutes les classes</option>
                   <option value="CE1-A">CE1-A</option>
                   <option value="CE1-B">CE1-B</option>
                   <option value="CE2-A">CE2-A</option>
                 </select>
                 <div className="relative w-full sm:w-auto">
-                  <Search className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                  <Search className="w-3.5 h-3.5 sm:w-4 sm:h-4 absolute left-2.5 sm:left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                   <input
                     type="text"
-                    placeholder="Rechercher un élève..."
-                    className="pl-10 pr-4 py-2 border-2 border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 w-full"
+                    placeholder="Rechercher..."
+                    className="pl-8 sm:pl-10 pr-3 sm:pr-4 py-1.5 sm:py-2 border-2 border-gray-200 rounded-lg text-xs sm:text-sm focus:outline-none focus:border-blue-500 w-full"
                   />
                 </div>
               </div>
             </div>
 
             {/* Statistiques rapides */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-              <div className="bg-blue-50 rounded-lg p-4 border-2 border-blue-200 text-center">
-                <div className="text-2xl font-bold text-blue-600 mb-1">75</div>
-                <div className="text-xs text-gray-600">Total élèves</div>
+            <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-6">
+              <div className="bg-blue-50 rounded-lg p-2 sm:p-3 md:p-4 border-2 border-blue-200 text-center">
+                <div className="text-lg sm:text-xl md:text-2xl font-bold text-blue-600 mb-0.5 sm:mb-1">75</div>
+                <div className="text-[10px] sm:text-xs text-gray-600">Total</div>
               </div>
-              <div className="bg-green-50 rounded-lg p-4 border-2 border-green-200 text-center">
-                <div className="text-2xl font-bold text-green-600 mb-1">68</div>
-                <div className="text-xs text-gray-600">Présents</div>
+              <div className="bg-green-50 rounded-lg p-2 sm:p-3 md:p-4 border-2 border-green-200 text-center">
+                <div className="text-lg sm:text-xl md:text-2xl font-bold text-green-600 mb-0.5 sm:mb-1">68</div>
+                <div className="text-[10px] sm:text-xs text-gray-600">Présents</div>
               </div>
-              <div className="bg-red-50 rounded-lg p-4 border-2 border-red-200 text-center">
-                <div className="text-2xl font-bold text-red-600 mb-1">7</div>
-                <div className="text-xs text-gray-600">Absents</div>
+              <div className="bg-red-50 rounded-lg p-2 sm:p-3 md:p-4 border-2 border-red-200 text-center">
+                <div className="text-lg sm:text-xl md:text-2xl font-bold text-red-600 mb-0.5 sm:mb-1">7</div>
+                <div className="text-[10px] sm:text-xs text-gray-600">Absents</div>
               </div>
             </div>
 
             {/* Liste des élèves */}
-            <div className="space-y-3">
+            <div className="space-y-2 sm:space-y-3">
               {[
                 { name: 'Sophie Martin', classe: 'CE1-A', moyenne: 15.5, absences: 3, status: 'present' },
                 { name: 'Lucas Dubois', classe: 'CE1-A', moyenne: 16.2, absences: 1, status: 'present' },
@@ -1031,55 +1031,60 @@ export default function DemoPage() {
               ].map((student, index) => (
                 <div
                   key={index}
-                  className={`bg-white rounded-lg p-4 border-2 ${
+                  className={`bg-white rounded-lg p-2.5 sm:p-4 border-2 ${
                     student.status === 'absent' ? 'border-red-200 bg-red-50' : 'border-gray-200 hover:border-blue-300'
                   } transition-all`}
                 >
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                    <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0 w-full">
-                      <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-semibold flex-shrink-0 ${
-                        student.status === 'absent' 
-                          ? 'bg-gradient-to-br from-red-400 to-red-600' 
-                          : 'bg-gradient-to-br from-blue-400 to-indigo-500'
-                      }`}>
-                        {student.name.split(' ').map(n => n[0]).join('')}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="font-semibold text-gray-900 text-sm sm:text-base truncate">{student.name}</div>
-                        <div className="text-xs text-gray-600">{student.classe}</div>
-                      </div>
-                      <div className="flex gap-3 sm:gap-4">
-                        <div className="text-right">
-                          <div className="text-base sm:text-lg font-bold text-blue-600">{student.moyenne}/20</div>
-                          <div className="text-xs text-gray-500">Moyenne</div>
-                        </div>
-                        <div className="text-right">
-                          <div className={`text-xs sm:text-sm font-semibold ${
-                            student.absences === 0 ? 'text-green-600' : student.absences <= 2 ? 'text-yellow-600' : 'text-red-600'
-                          }`}>
-                            {student.absences} absence{student.absences > 1 ? 's' : ''}
-                          </div>
-                          <div className="text-xs text-gray-500">Absences</div>
-                        </div>
-                      </div>
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    {/* Avatar */}
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-semibold flex-shrink-0 ${
+                      student.status === 'absent' 
+                        ? 'bg-gradient-to-br from-red-400 to-red-600' 
+                        : 'bg-gradient-to-br from-blue-400 to-indigo-500'
+                    }`}>
+                      {student.name.split(' ').map(n => n[0]).join('')}
                     </div>
-                    <div className="flex items-center gap-2 self-end sm:self-auto">
+                    
+                    {/* Nom et classe */}
+                    <div className="flex-1 min-w-0">
+                      <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base truncate">{student.name}</div>
+                      <div className="text-[10px] sm:text-xs text-gray-600 truncate">{student.classe}</div>
+                    </div>
+                    
+                    {/* Moyenne */}
+                    <div className="text-center flex-shrink-0 px-1 sm:px-2">
+                      <div className="text-sm sm:text-base md:text-lg font-bold text-blue-600 whitespace-nowrap">{student.moyenne}/20</div>
+                      <div className="text-[10px] sm:text-xs text-gray-500">Moy.</div>
+                    </div>
+                    
+                    {/* Absences */}
+                    <div className="text-center flex-shrink-0 px-1 sm:px-2">
+                      <div className={`text-xs sm:text-sm font-semibold whitespace-nowrap ${
+                        student.absences === 0 ? 'text-green-600' : student.absences <= 2 ? 'text-yellow-600' : 'text-red-600'
+                      }`}>
+                        {student.absences}
+                      </div>
+                      <div className="text-[10px] sm:text-xs text-gray-500">Abs.</div>
+                    </div>
+                    
+                    {/* Badge Absent et boutons */}
+                    <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
                       {student.status === 'absent' && (
-                        <div className="text-xs font-medium bg-red-100 text-red-700 px-2 py-1 rounded-full whitespace-nowrap">
+                        <div className="text-[10px] sm:text-xs font-medium bg-red-100 text-red-700 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full whitespace-nowrap">
                           Absent
                         </div>
                       )}
                       <button
-                        className="p-2 hover:bg-blue-100 rounded-lg transition-all"
+                        className="p-1.5 sm:p-2 hover:bg-blue-100 rounded-lg transition-all flex-shrink-0"
                         title="Voir profil"
                       >
-                        <UserIcon className="w-4 h-4 text-blue-600" />
+                        <UserIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600" />
                       </button>
                       <button
-                        className="p-2 hover:bg-gray-200 rounded-lg transition-all"
+                        className="p-1.5 sm:p-2 hover:bg-gray-200 rounded-lg transition-all flex-shrink-0"
                         title="Plus d'options"
                       >
-                        <MoreVertical className="w-4 h-4 text-gray-600" />
+                        <MoreVertical className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-600" />
                       </button>
                     </div>
                   </div>
