@@ -799,33 +799,38 @@ export default function DemoPage() {
         <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-green-200">
           <div className="bg-white rounded-xl shadow-xl p-4 sm:p-6 mb-4 -mx-2 sm:-mx-4 md:-mx-6">
             {/* En-tête professeur */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
-                <GraduationCap className="w-8 h-8 text-white" />
+            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <GraduationCap className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
               <div className="flex-1 min-w-0">
-                <h4 className="font-bold text-gray-900 text-lg">M. Bernard</h4>
-                <p className="text-sm text-gray-600 break-words">Professeur • Mathématiques</p>
+                <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+                  <h4 className="font-bold text-gray-900 text-sm sm:text-lg whitespace-nowrap">M. Bernard</h4>
+                  <span className="text-xs sm:text-sm text-gray-600 whitespace-nowrap">•</span>
+                  <span className="text-xs sm:text-sm text-gray-600 whitespace-nowrap">Professeur</span>
+                  <span className="text-xs sm:text-sm text-gray-600 whitespace-nowrap">•</span>
+                  <span className="text-xs sm:text-sm text-gray-600 whitespace-nowrap">Mathématiques</span>
+                </div>
               </div>
             </div>
 
             {/* Statistiques principales */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-              <div className="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
-                <div className="flex items-center gap-2 mb-1">
-                  <Users className="w-4 h-4 text-blue-600" />
-                  <div className="text-xs text-gray-600">Élèves</div>
+            <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-6">
+              <div className="bg-blue-50 rounded-lg p-2 sm:p-3 md:p-4 border-l-4 border-blue-500">
+                <div className="flex items-center gap-1 sm:gap-2 mb-0.5 sm:mb-1">
+                  <Users className="w-3 h-3 sm:w-4 sm:h-4 text-blue-600 flex-shrink-0" />
+                  <div className="text-[10px] sm:text-xs text-gray-600 truncate">Élèves</div>
                 </div>
-                <div className="text-2xl font-bold text-blue-600">75</div>
-                <div className="text-xs text-gray-500">En total</div>
+                <div className="text-base sm:text-xl md:text-2xl font-bold text-blue-600">75</div>
+                <div className="text-[10px] sm:text-xs text-gray-500 truncate">En total</div>
               </div>
-              <div className="bg-green-50 rounded-lg p-4 border-l-4 border-green-500">
-                <div className="flex items-center gap-2 mb-1">
-                  <School className="w-4 h-4 text-green-600" />
-                  <div className="text-xs text-gray-600">Classes</div>
+              <div className="bg-green-50 rounded-lg p-2 sm:p-3 md:p-4 border-l-4 border-green-500">
+                <div className="flex items-center gap-1 sm:gap-2 mb-0.5 sm:mb-1">
+                  <School className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0" />
+                  <div className="text-[10px] sm:text-xs text-gray-600 truncate">Classes</div>
                 </div>
-                <div className="text-2xl font-bold text-green-600">3</div>
-                <div className="text-xs text-gray-500">En charge</div>
+                <div className="text-base sm:text-xl md:text-2xl font-bold text-green-600">3</div>
+                <div className="text-[10px] sm:text-xs text-gray-500 truncate">En charge</div>
               </div>
             </div>
 
