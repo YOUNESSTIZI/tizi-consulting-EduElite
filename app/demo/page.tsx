@@ -1107,47 +1107,47 @@ export default function DemoPage() {
         'Statistiques et rapports'
       ],
       content: (
-        <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-8 border-2 border-orange-200">
-          <div className="space-y-4">
+        <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-orange-200">
+          <div className="space-y-3 sm:space-y-4">
             {/* Classe CE1-A */}
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 overflow-hidden">
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 overflow-hidden -mx-2 sm:-mx-4 md:mx-0">
               <button
                 onClick={() => setOpenClass(openClass === 'CE1-A' ? null : 'CE1-A')}
-                className="w-full flex items-center justify-between p-5 hover:bg-gray-50 transition-all"
+                className="w-full flex items-center justify-between p-3 sm:p-4 md:p-5 hover:bg-gray-50 transition-all gap-2 sm:gap-4"
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-                    <School className="w-6 h-6 text-white" />
+                <div className="flex items-center gap-2 sm:gap-3 md:gap-4 flex-1 min-w-0">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <School className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
-                  <div className="text-left">
-                    <h4 className="font-bold text-gray-900 text-lg">CE1-A</h4>
-                    <div className="flex items-center gap-3 text-sm text-gray-600">
-                      <span>Niveau: CE1</span>
+                  <div className="text-left flex-1 min-w-0">
+                    <h4 className="font-bold text-gray-900 text-sm sm:text-base md:text-lg truncate">CE1-A</h4>
+                    <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3 text-xs sm:text-sm text-gray-600 flex-wrap">
+                      <span className="whitespace-nowrap">Niveau: CE1</span>
                       <span>•</span>
-                      <span>25 élèves</span>
+                      <span className="whitespace-nowrap">25 élèves</span>
                       <span>•</span>
-                      <span>Prof. Principal: M. Bernard</span>
+                      <span className="truncate">Prof: M. Bernard</span>
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-blue-50 rounded-lg px-3 py-2 text-center border border-blue-200">
-                    <div className="text-lg font-bold text-blue-600">25</div>
-                    <div className="text-xs text-gray-600">Élèves</div>
+                <div className="flex items-center gap-2 sm:gap-3 md:gap-4 flex-shrink-0">
+                  <div className="bg-blue-50 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 text-center border border-blue-200">
+                    <div className="text-base sm:text-lg font-bold text-blue-600">25</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Élèves</div>
                   </div>
                   {openClass === 'CE1-A' ? (
-                    <ChevronUp className="w-6 h-6 text-gray-600" />
+                    <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 flex-shrink-0" />
                   ) : (
-                    <ChevronDown className="w-6 h-6 text-gray-600" />
+                    <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 flex-shrink-0" />
                   )}
                 </div>
               </button>
               
               {/* Contenu dépliable */}
               {openClass === 'CE1-A' && (
-                <div className="border-t border-gray-200 p-6 bg-gray-50">
+                <div className="border-t border-gray-200 p-3 sm:p-4 md:p-6 bg-gray-50 -mx-2 sm:-mx-4 md:mx-0">
                   {/* Contenu de la classe - cartes élèves */}
-                  <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 border-2 border-gray-200 overflow-hidden">
+                  <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-3 sm:p-4 md:p-6 border-2 border-gray-200 overflow-hidden -mx-2 sm:-mx-4 md:mx-0">
                     {/* Image de fond - classe */}
                     <div className="absolute inset-0 z-0 opacity-25">
                       <Image
@@ -1162,7 +1162,7 @@ export default function DemoPage() {
                     {/* Contenu par-dessus l'image */}
                     <div className="relative z-10">
                       {/* Grille de cartes élèves */}
-                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3 max-w-3xl mx-auto">
                         {[
                           { name: 'Sophie M.', fullName: 'Sophie Martin', initial: 'SM', avg: 15.5, isAbsent: false },
                           { name: 'Julien D.', fullName: 'Julien Dubois', initial: 'JD', avg: 14.8, isAbsent: true },
@@ -1182,36 +1182,36 @@ export default function DemoPage() {
                             className={`group relative cursor-pointer transition-all hover:scale-105 ${student.isAbsent ? 'opacity-60' : ''}`}
                           >
                             {/* Carte élève */}
-                            <div className={`bg-white rounded-xl shadow-lg border-2 overflow-hidden hover:shadow-xl transition-all ${
+                            <div className={`bg-white rounded-lg sm:rounded-xl shadow-lg border-2 overflow-hidden hover:shadow-xl transition-all ${
                               student.isAbsent ? 'border-red-300' : 'border-gray-200'
                             }`}>
                               {/* Image de l'élève */}
-                              <div className="relative h-24 bg-gradient-to-br from-gray-100 to-gray-200">
+                              <div className="relative h-16 sm:h-20 md:h-24 bg-gradient-to-br from-gray-100 to-gray-200">
                         <div className={`absolute inset-0 flex items-center justify-center ${
                           student.isAbsent 
                             ? 'bg-gradient-to-br from-red-400 to-red-600' 
                             : 'bg-gradient-to-br from-blue-400 to-indigo-500'
                         }`}>
-                                  <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border-4 border-white shadow-xl">
-                                    <UserCircle2 className="w-12 h-12 text-white opacity-90" />
+                                  <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border-2 sm:border-4 border-white shadow-xl">
+                                    <UserCircle2 className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white opacity-90" />
                                   </div>
                                 </div>
                                 
                                 {student.isAbsent && (
-                                  <div className="absolute top-2 right-2 bg-red-500 text-white rounded-full p-1.5 shadow-lg">
-                                    <XCircleIcon className="w-4 h-4" />
+                                  <div className="absolute top-1 right-1 sm:top-2 sm:right-2 bg-red-500 text-white rounded-full p-1 sm:p-1.5 shadow-lg">
+                                    <XCircleIcon className="w-3 h-3 sm:w-4 sm:h-4" />
                                   </div>
                                 )}
                               </div>
                               
                               {/* Informations de l'élève */}
-                              <div className="p-3">
+                              <div className="p-2 sm:p-3">
                                 <div className="text-center">
-                                  <div className="font-bold text-sm text-gray-900 mb-2">{student.name}</div>
+                                  <div className="font-bold text-xs sm:text-sm text-gray-900 mb-1 sm:mb-2 truncate">{student.name}</div>
                                   
                                   {student.isAbsent && (
-                                    <div className="inline-flex items-center gap-1 bg-red-50 text-red-700 px-2 py-1 rounded-full text-xs font-medium border border-red-200">
-                                      <XCircleIcon className="w-3 h-3" />
+                                    <div className="inline-flex items-center gap-0.5 sm:gap-1 bg-red-50 text-red-700 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium border border-red-200">
+                                      <XCircleIcon className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                                       <span>Absent</span>
                                     </div>
                                   )}
@@ -1219,16 +1219,16 @@ export default function DemoPage() {
                               </div>
                               
                               {/* Boutons d'action */}
-                              <div className="px-3 pb-3 flex items-center justify-center gap-2">
+                              <div className="px-2 sm:px-3 pb-2 sm:pb-3 flex items-center justify-center gap-1 sm:gap-2">
                                 <button 
-                                  className="flex-1 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-3 py-2 rounded-lg text-xs font-semibold hover:from-blue-600 hover:to-indigo-700 transition-all flex items-center justify-center gap-1.5 shadow-md hover:shadow-lg"
+                                  className="flex-1 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 md:py-2 rounded-lg text-[10px] sm:text-xs font-semibold hover:from-blue-600 hover:to-indigo-700 transition-all flex items-center justify-center gap-1 sm:gap-1.5 shadow-md hover:shadow-lg"
                                   title="Consulter le profil"
                                 >
-                                  <UserIcon className="w-3.5 h-3.5" />
-                                  <span>Profil</span>
+                                  <UserIcon className="w-3 h-3 sm:w-3.5 sm:h-3.5 flex-shrink-0" />
+                                  <span className="hidden sm:inline">Profil</span>
                                 </button>
                                 <button 
-                                  className={`flex-1 px-3 py-2 rounded-lg text-xs font-semibold transition-all flex items-center justify-center gap-1.5 shadow-md hover:shadow-lg ${
+                                  className={`flex-1 px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 md:py-2 rounded-lg text-[10px] sm:text-xs font-semibold transition-all flex items-center justify-center gap-1 sm:gap-1.5 shadow-md hover:shadow-lg ${
                                     student.isAbsent 
                                       ? 'bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700' 
                                       : 'bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700'
@@ -1237,13 +1237,13 @@ export default function DemoPage() {
                                 >
                                   {student.isAbsent ? (
                                     <>
-                                      <CheckCircle2 className="w-3.5 h-3.5" />
-                                      <span>Présent</span>
+                                      <CheckCircle2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 flex-shrink-0" />
+                                      <span className="hidden sm:inline">Présent</span>
                                     </>
                                   ) : (
                                     <>
-                                      <X className="w-3.5 h-3.5" />
-                                      <span>Absent</span>
+                                      <X className="w-3 h-3 sm:w-3.5 sm:h-3.5 flex-shrink-0" />
+                                      <span className="hidden sm:inline">Absent</span>
                                     </>
                                   )}
                                 </button>
@@ -1259,43 +1259,43 @@ export default function DemoPage() {
             </div>
 
             {/* Classe CE1-B */}
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 overflow-hidden">
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 overflow-hidden -mx-2 sm:-mx-4 md:mx-0">
               <button
                 onClick={() => setOpenClass(openClass === 'CE1-B' ? null : 'CE1-B')}
-                className="w-full flex items-center justify-between p-5 hover:bg-gray-50 transition-all"
+                className="w-full flex items-center justify-between p-3 sm:p-4 md:p-5 hover:bg-gray-50 transition-all gap-2 sm:gap-4"
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
-                    <School className="w-6 h-6 text-white" />
+                <div className="flex items-center gap-2 sm:gap-3 md:gap-4 flex-1 min-w-0">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <School className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
-                  <div className="text-left">
-                    <h4 className="font-bold text-gray-900 text-lg">CE1-B</h4>
-                    <div className="flex items-center gap-3 text-sm text-gray-600">
-                      <span>Niveau: CE1</span>
+                  <div className="text-left flex-1 min-w-0">
+                    <h4 className="font-bold text-gray-900 text-sm sm:text-base md:text-lg truncate">CE1-B</h4>
+                    <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3 text-xs sm:text-sm text-gray-600 flex-wrap">
+                      <span className="whitespace-nowrap">Niveau: CE1</span>
                       <span>•</span>
-                      <span>23 élèves</span>
+                      <span className="whitespace-nowrap">23 élèves</span>
                       <span>•</span>
-                      <span>Prof. Principal: Mme. Dubois</span>
+                      <span className="truncate">Prof: Mme. Dubois</span>
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-blue-50 rounded-lg px-3 py-2 text-center border border-blue-200">
-                    <div className="text-lg font-bold text-blue-600">23</div>
-                    <div className="text-xs text-gray-600">Élèves</div>
+                <div className="flex items-center gap-2 sm:gap-3 md:gap-4 flex-shrink-0">
+                  <div className="bg-blue-50 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 text-center border border-blue-200">
+                    <div className="text-base sm:text-lg font-bold text-blue-600">23</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Élèves</div>
                   </div>
                   {openClass === 'CE1-B' ? (
-                    <ChevronUp className="w-6 h-6 text-gray-600" />
+                    <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 flex-shrink-0" />
                   ) : (
-                    <ChevronDown className="w-6 h-6 text-gray-600" />
+                    <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 flex-shrink-0" />
                   )}
                 </div>
               </button>
               
               {openClass === 'CE1-B' && (
-                <div className="border-t border-gray-200 p-6 bg-gray-50">
+                <div className="border-t border-gray-200 p-3 sm:p-4 md:p-6 bg-gray-50 -mx-2 sm:-mx-4 md:mx-0">
                   {/* Contenu de la classe - cartes élèves */}
-                  <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 border-2 border-gray-200 overflow-hidden">
+                  <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-3 sm:p-4 md:p-6 border-2 border-gray-200 overflow-hidden -mx-2 sm:-mx-4 md:mx-0">
                     {/* Image de fond - classe */}
                     <div className="absolute inset-0 z-0 opacity-25">
                       <Image
@@ -1310,7 +1310,7 @@ export default function DemoPage() {
                     {/* Contenu par-dessus l'image */}
                     <div className="relative z-10">
                       {/* Grille de cartes élèves */}
-                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3 max-w-3xl mx-auto">
                         {[
                           { name: 'Marie D.', fullName: 'Marie Dubois', initial: 'MD', avg: 14.8, isAbsent: false },
                           { name: 'Paul R.', fullName: 'Paul Rousseau', initial: 'PR', avg: 15.2, isAbsent: false },
@@ -1330,36 +1330,36 @@ export default function DemoPage() {
                             className={`group relative cursor-pointer transition-all hover:scale-105 ${student.isAbsent ? 'opacity-60' : ''}`}
                           >
                             {/* Carte élève */}
-                            <div className={`bg-white rounded-xl shadow-lg border-2 overflow-hidden hover:shadow-xl transition-all ${
+                            <div className={`bg-white rounded-lg sm:rounded-xl shadow-lg border-2 overflow-hidden hover:shadow-xl transition-all ${
                               student.isAbsent ? 'border-red-300' : 'border-gray-200'
                             }`}>
                               {/* Image de l'élève */}
-                              <div className="relative h-24 bg-gradient-to-br from-gray-100 to-gray-200">
+                              <div className="relative h-16 sm:h-20 md:h-24 bg-gradient-to-br from-gray-100 to-gray-200">
                                 <div className={`absolute inset-0 flex items-center justify-center ${
                                   student.isAbsent 
                                     ? 'bg-gradient-to-br from-red-400 to-red-600' 
                                     : 'bg-gradient-to-br from-blue-400 to-indigo-500'
                                 }`}>
-                                  <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border-4 border-white shadow-xl">
-                                    <UserCircle2 className="w-12 h-12 text-white opacity-90" />
+                                  <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border-2 sm:border-4 border-white shadow-xl">
+                                    <UserCircle2 className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white opacity-90" />
                                   </div>
                                 </div>
                                 
                                 {student.isAbsent && (
-                                  <div className="absolute top-2 right-2 bg-red-500 text-white rounded-full p-1.5 shadow-lg">
-                                    <XCircleIcon className="w-4 h-4" />
+                                  <div className="absolute top-1 right-1 sm:top-2 sm:right-2 bg-red-500 text-white rounded-full p-1 sm:p-1.5 shadow-lg">
+                                    <XCircleIcon className="w-3 h-3 sm:w-4 sm:h-4" />
                                   </div>
                                 )}
                               </div>
                               
                               {/* Informations de l'élève */}
-                              <div className="p-3">
+                              <div className="p-2 sm:p-3">
                                 <div className="text-center">
-                                  <div className="font-bold text-sm text-gray-900 mb-2">{student.name}</div>
+                                  <div className="font-bold text-xs sm:text-sm text-gray-900 mb-1 sm:mb-2 truncate">{student.name}</div>
                                   
                                   {student.isAbsent && (
-                                    <div className="inline-flex items-center gap-1 bg-red-50 text-red-700 px-2 py-1 rounded-full text-xs font-medium border border-red-200">
-                                      <XCircleIcon className="w-3 h-3" />
+                                    <div className="inline-flex items-center gap-0.5 sm:gap-1 bg-red-50 text-red-700 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium border border-red-200">
+                                      <XCircleIcon className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                                       <span>Absent</span>
                                     </div>
                                   )}
@@ -1367,16 +1367,16 @@ export default function DemoPage() {
                               </div>
                               
                               {/* Boutons d'action */}
-                              <div className="px-3 pb-3 flex items-center justify-center gap-2">
+                              <div className="px-2 sm:px-3 pb-2 sm:pb-3 flex items-center justify-center gap-1 sm:gap-2">
                                 <button 
-                                  className="flex-1 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-3 py-2 rounded-lg text-xs font-semibold hover:from-blue-600 hover:to-indigo-700 transition-all flex items-center justify-center gap-1.5 shadow-md hover:shadow-lg"
+                                  className="flex-1 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 md:py-2 rounded-lg text-[10px] sm:text-xs font-semibold hover:from-blue-600 hover:to-indigo-700 transition-all flex items-center justify-center gap-1 sm:gap-1.5 shadow-md hover:shadow-lg"
                                   title="Consulter le profil"
                                 >
-                                  <UserIcon className="w-3.5 h-3.5" />
-                                  <span>Profil</span>
+                                  <UserIcon className="w-3 h-3 sm:w-3.5 sm:h-3.5 flex-shrink-0" />
+                                  <span className="hidden sm:inline">Profil</span>
                                 </button>
                                 <button 
-                                  className={`flex-1 px-3 py-2 rounded-lg text-xs font-semibold transition-all flex items-center justify-center gap-1.5 shadow-md hover:shadow-lg ${
+                                  className={`flex-1 px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 md:py-2 rounded-lg text-[10px] sm:text-xs font-semibold transition-all flex items-center justify-center gap-1 sm:gap-1.5 shadow-md hover:shadow-lg ${
                                     student.isAbsent 
                                       ? 'bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700' 
                                       : 'bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700'
@@ -1385,13 +1385,13 @@ export default function DemoPage() {
                                 >
                                   {student.isAbsent ? (
                                     <>
-                                      <CheckCircle2 className="w-3.5 h-3.5" />
-                                      <span>Présent</span>
+                                      <CheckCircle2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 flex-shrink-0" />
+                                      <span className="hidden sm:inline">Présent</span>
                                     </>
                                   ) : (
                                     <>
-                                      <X className="w-3.5 h-3.5" />
-                                      <span>Absent</span>
+                                      <X className="w-3 h-3 sm:w-3.5 sm:h-3.5 flex-shrink-0" />
+                                      <span className="hidden sm:inline">Absent</span>
                                     </>
                                   )}
                                 </button>
