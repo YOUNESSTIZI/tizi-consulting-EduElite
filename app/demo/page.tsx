@@ -1935,23 +1935,23 @@ export default function DemoPage() {
       content: (
         <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-orange-200">
           {/* Diagramme des gains mensuels */}
-          <div className="bg-white rounded-xl shadow-xl p-6 border-2 border-gray-200 mb-6">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4">
+          <div className="bg-white rounded-xl shadow-xl p-3 sm:p-4 md:p-6 border-2 border-gray-200 mb-4 sm:mb-6 -mx-2 sm:-mx-4 md:-mx-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6 gap-3 sm:gap-4">
               <div className="flex-1 min-w-0">
-                <h4 className="font-bold text-gray-900 text-lg flex items-center gap-2">
-                  <BarChart3 className="w-5 h-5 text-green-600" />
-                  Plan Financier
+                <h4 className="font-bold text-gray-900 text-sm sm:text-base md:text-lg flex items-center gap-1.5 sm:gap-2">
+                  <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                  <span>Plan Financier</span>
                 </h4>
-                <p className="text-sm text-gray-600 mt-1">Évolution du chiffre d'affaires et des charges</p>
+                <p className="text-xs sm:text-sm text-gray-600 mt-1">Évolution du chiffre d'affaires et des charges</p>
               </div>
-              <div className="flex flex-col sm:flex-row items-start sm:items-end gap-3 sm:gap-4">
-                <div className="text-left sm:text-right">
-                  <div className="text-xl sm:text-2xl font-bold text-green-600">36,750 €</div>
-                  <div className="text-xs text-gray-600">CA Total</div>
+              <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
+                <div className="text-center sm:text-right">
+                  <div className="text-lg sm:text-xl md:text-2xl font-bold text-green-600">36,750 €</div>
+                  <div className="text-[10px] sm:text-xs text-gray-600">CA Total</div>
                 </div>
-                <div className="text-left sm:text-right">
-                  <div className="text-xl sm:text-2xl font-bold text-red-600">28,500 €</div>
-                  <div className="text-xs text-gray-600">Charges Total</div>
+                <div className="text-center sm:text-right">
+                  <div className="text-lg sm:text-xl md:text-2xl font-bold text-red-600">28,500 €</div>
+                  <div className="text-[10px] sm:text-xs text-gray-600">Charges Total</div>
                 </div>
               </div>
             </div>
@@ -2136,89 +2136,89 @@ export default function DemoPage() {
               </div>
 
               {/* Statistiques */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 pt-6 border-t-2 border-gray-200">
-                <div className="bg-green-50 rounded-lg p-4 border-2 border-green-200">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="w-3 h-3 bg-green-500 rounded"></div>
-                    <span className="text-sm font-semibold text-gray-700">Chiffre d'affaires moyen</span>
+              <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 mt-4 sm:mt-6 pt-4 sm:pt-6 border-t-2 border-gray-200">
+                <div className="bg-green-50 rounded-lg p-2 sm:p-3 md:p-4 border-2 border-green-200">
+                  <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-2">
+                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-green-500 rounded flex-shrink-0"></div>
+                    <span className="text-xs sm:text-sm font-semibold text-gray-700 truncate">CA moyen</span>
                   </div>
-                  <div className="text-2xl font-bold text-green-600">3,075 €</div>
-                  <div className="text-xs text-gray-600 mt-1">Par mois</div>
+                  <div className="text-lg sm:text-xl md:text-2xl font-bold text-green-600">3,075 €</div>
+                  <div className="text-[10px] sm:text-xs text-gray-600 mt-0.5 sm:mt-1">Par mois</div>
                 </div>
-                <div className="bg-red-50 rounded-lg p-4 border-2 border-red-200">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="w-3 h-3 bg-red-500 rounded"></div>
-                    <span className="text-sm font-semibold text-gray-700">Charges moyennes</span>
+                <div className="bg-red-50 rounded-lg p-2 sm:p-3 md:p-4 border-2 border-red-200">
+                  <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-2">
+                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-red-500 rounded flex-shrink-0"></div>
+                    <span className="text-xs sm:text-sm font-semibold text-gray-700 truncate">Charges moy.</span>
                   </div>
-                  <div className="text-2xl font-bold text-red-600">2,350 €</div>
-                  <div className="text-xs text-gray-600 mt-1">Par mois</div>
+                  <div className="text-lg sm:text-xl md:text-2xl font-bold text-red-600">2,350 €</div>
+                  <div className="text-[10px] sm:text-xs text-gray-600 mt-0.5 sm:mt-1">Par mois</div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Statistiques globales */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-            <div className="bg-white rounded-xl shadow-lg p-4 border-2 border-blue-200">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="bg-blue-100 p-2 rounded-lg">
-                  <GraduationCap className="w-5 h-5 text-blue-600" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-6">
+            <div className="bg-white rounded-xl shadow-lg p-2 sm:p-3 md:p-4 border-2 border-blue-200">
+              <div className="flex items-center gap-2 sm:gap-3 mb-1 sm:mb-2">
+                <div className="bg-blue-100 p-1.5 sm:p-2 rounded-lg flex-shrink-0">
+                  <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
                 </div>
-                <div className="flex-1">
-                  <div className="text-2xl font-bold text-gray-900">12</div>
-                  <div className="text-xs text-gray-600">Professeurs</div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg p-4 border-2 border-green-200">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="bg-green-100 p-2 rounded-lg">
-                  <School className="w-5 h-5 text-green-600" />
-                </div>
-                <div className="flex-1">
-                  <div className="text-2xl font-bold text-gray-900">8</div>
-                  <div className="text-xs text-gray-600">Classes</div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">12</div>
+                  <div className="text-[10px] sm:text-xs text-gray-600 truncate">Professeurs</div>
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-xl shadow-lg p-4 border-2 border-purple-200">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="bg-purple-100 p-2 rounded-lg">
-                  <Users className="w-5 h-5 text-purple-600" />
+            <div className="bg-white rounded-xl shadow-lg p-2 sm:p-3 md:p-4 border-2 border-green-200">
+              <div className="flex items-center gap-2 sm:gap-3 mb-1 sm:mb-2">
+                <div className="bg-green-100 p-1.5 sm:p-2 rounded-lg flex-shrink-0">
+                  <School className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
                 </div>
-                <div className="flex-1">
-                  <div className="text-2xl font-bold text-gray-900">245</div>
-                  <div className="text-xs text-gray-600">Élèves</div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">8</div>
+                  <div className="text-[10px] sm:text-xs text-gray-600 truncate">Classes</div>
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-xl shadow-lg p-4 border-2 border-orange-200">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="bg-orange-100 p-2 rounded-lg">
-                  <CreditCard className="w-5 h-5 text-orange-600" />
+            <div className="bg-white rounded-xl shadow-lg p-2 sm:p-3 md:p-4 border-2 border-purple-200">
+              <div className="flex items-center gap-2 sm:gap-3 mb-1 sm:mb-2">
+                <div className="bg-purple-100 p-1.5 sm:p-2 rounded-lg flex-shrink-0">
+                  <Users className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
                 </div>
-                <div className="flex-1">
-                  <div className="text-2xl font-bold text-gray-900">18</div>
-                  <div className="text-xs text-gray-600">Paiements en attente</div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">245</div>
+                  <div className="text-[10px] sm:text-xs text-gray-600 truncate">Élèves</div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white rounded-xl shadow-lg p-2 sm:p-3 md:p-4 border-2 border-orange-200">
+              <div className="flex items-center gap-2 sm:gap-3 mb-1 sm:mb-2">
+                <div className="bg-orange-100 p-1.5 sm:p-2 rounded-lg flex-shrink-0">
+                  <CreditCard className="w-4 h-4 sm:w-5 sm:h-5 text-orange-600" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">18</div>
+                  <div className="text-[10px] sm:text-xs text-gray-600 truncate">Paiements attente</div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
             {/* Liste des professeurs */}
-            <div className="bg-white rounded-xl shadow-xl p-6 border-2 border-gray-200">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-3">
-                <h4 className="font-bold text-gray-900 text-lg flex items-center gap-2">
-                  <GraduationCap className="w-5 h-5 text-blue-600" />
-                  Liste des Professeurs
+            <div className="bg-white rounded-xl shadow-xl p-3 sm:p-4 md:p-6 border-2 border-gray-200 -mx-2 sm:-mx-4 md:mx-0">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-3 sm:mb-4 gap-2 sm:gap-3">
+                <h4 className="font-bold text-gray-900 text-sm sm:text-base md:text-lg flex items-center gap-1.5 sm:gap-2">
+                  <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0" />
+                  <span>Liste des Professeurs</span>
                 </h4>
-                <button className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-3 py-1 rounded-lg text-sm font-semibold hover:from-blue-600 hover:to-indigo-700 transition-all flex items-center gap-2 w-full sm:w-auto justify-center">
-                  <Plus className="w-4 h-4" />
-                  Ajouter
+                <button className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-2 sm:px-3 py-1 rounded-lg text-[10px] sm:text-xs md:text-sm font-semibold hover:from-blue-600 hover:to-indigo-700 transition-all flex items-center gap-1 sm:gap-2 w-full sm:w-auto justify-center flex-shrink-0">
+                  <Plus className="w-3 h-3 sm:w-4 sm:h-4" />
+                  <span>Ajouter</span>
                 </button>
               </div>
-              <div className="space-y-2 max-h-64 overflow-y-auto">
+              <div className="space-y-1.5 sm:space-y-2 max-h-64 overflow-y-auto">
                 {[
                   { name: 'M. Bernard', subject: 'Mathématiques', classes: ['CE1-A', 'CE1-B'], email: 'bernard@ecole.fr' },
                   { name: 'Mme. Dubois', subject: 'Français', classes: ['CE1-A', 'CE2-A'], email: 'dubois@ecole.fr' },
@@ -2226,19 +2226,19 @@ export default function DemoPage() {
                   { name: 'Mme. Laurent', subject: 'Histoire', classes: ['CE2-A'], email: 'laurent@ecole.fr' },
                   { name: 'M. Petit', subject: 'Anglais', classes: ['CE1-A', 'CE1-B'], email: 'petit@ecole.fr' }
                 ].map((prof, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg p-3 border-2 border-gray-200 hover:border-blue-300 transition-all">
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+                  <div key={index} className="bg-gray-50 rounded-lg p-2 sm:p-2.5 md:p-3 border-2 border-gray-200 hover:border-blue-300 transition-all">
+                    <div className="flex items-center gap-2 sm:gap-3">
                       <div className="flex-1 min-w-0">
-                        <div className="font-semibold text-gray-900 truncate">{prof.name}</div>
-                        <div className="text-xs text-gray-600">{prof.subject}</div>
-                        <div className="text-xs text-gray-500 mt-1 break-words">Classes: {prof.classes.join(', ')}</div>
+                        <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base truncate">{prof.name}</div>
+                        <div className="text-[10px] sm:text-xs text-gray-600 truncate">{prof.subject}</div>
+                        <div className="text-[10px] sm:text-xs text-gray-500 mt-0.5 sm:mt-1 truncate">Classes: {prof.classes.join(', ')}</div>
                       </div>
-                      <div className="flex items-center gap-2 self-end sm:self-auto">
-                        <button className="p-2 hover:bg-blue-100 rounded-lg transition-all" title="Contacter">
-                          <MailIcon className="w-4 h-4 text-blue-600" />
+                      <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
+                        <button className="p-1.5 sm:p-2 hover:bg-blue-100 rounded-lg transition-all" title="Contacter">
+                          <MailIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600" />
                         </button>
-                        <button className="p-2 hover:bg-gray-200 rounded-lg transition-all" title="Plus d'options">
-                          <MoreVertical className="w-4 h-4 text-gray-600" />
+                        <button className="p-1.5 sm:p-2 hover:bg-gray-200 rounded-lg transition-all" title="Plus d'options">
+                          <MoreVertical className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-600" />
                         </button>
                       </div>
                     </div>
@@ -2248,18 +2248,18 @@ export default function DemoPage() {
             </div>
 
             {/* Liste des classes */}
-            <div className="bg-white rounded-xl shadow-xl p-6 border-2 border-gray-200">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-3">
-                <h4 className="font-bold text-gray-900 text-lg flex items-center gap-2">
-                  <School className="w-5 h-5 text-green-600" />
-                  Classes
+            <div className="bg-white rounded-xl shadow-xl p-3 sm:p-4 md:p-6 border-2 border-gray-200 -mx-2 sm:-mx-4 md:mx-0">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-3 sm:mb-4 gap-2 sm:gap-3">
+                <h4 className="font-bold text-gray-900 text-sm sm:text-base md:text-lg flex items-center gap-1.5 sm:gap-2">
+                  <School className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                  <span>Classes</span>
                 </h4>
-                <button className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-3 py-1 rounded-lg text-sm font-semibold hover:from-green-600 hover:to-emerald-700 transition-all flex items-center gap-2 w-full sm:w-auto justify-center">
-                  <Plus className="w-4 h-4" />
-                  Ajouter
+                <button className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-2 sm:px-3 py-1 rounded-lg text-[10px] sm:text-xs md:text-sm font-semibold hover:from-green-600 hover:to-emerald-700 transition-all flex items-center gap-1 sm:gap-2 w-full sm:w-auto justify-center flex-shrink-0">
+                  <Plus className="w-3 h-3 sm:w-4 sm:h-4" />
+                  <span>Ajouter</span>
                 </button>
               </div>
-              <div className="space-y-2 max-h-64 overflow-y-auto">
+              <div className="space-y-1.5 sm:space-y-2 max-h-64 overflow-y-auto">
                 {[
                   { name: 'CE1-A', students: 12, teacher: 'M. Bernard', status: 'active' },
                   { name: 'CE1-B', students: 14, teacher: 'Mme. Dubois', status: 'active' },
@@ -2270,18 +2270,18 @@ export default function DemoPage() {
                   { name: 'CM2-A', students: 15, teacher: 'Mme. Dubois', status: 'active' },
                   { name: 'CM2-B', students: 13, teacher: 'M. Martin', status: 'active' }
                 ].map((classe, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg p-3 border-2 border-gray-200 hover:border-green-300 transition-all">
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+                  <div key={index} className="bg-gray-50 rounded-lg p-2 sm:p-2.5 md:p-3 border-2 border-gray-200 hover:border-green-300 transition-all">
+                    <div className="flex items-center gap-2 sm:gap-3">
                       <div className="flex-1 min-w-0">
-                        <div className="font-semibold text-gray-900">{classe.name}</div>
-                        <div className="text-xs text-gray-600 break-words">{classe.students} élèves • {classe.teacher}</div>
+                        <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base truncate">{classe.name}</div>
+                        <div className="text-[10px] sm:text-xs text-gray-600 truncate">{classe.students} élèves • {classe.teacher}</div>
                       </div>
-                      <div className="flex items-center gap-2 self-end sm:self-auto">
-                        <div className="text-xs font-medium bg-green-100 text-green-700 px-2 py-1 rounded-full whitespace-nowrap">
+                      <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
+                        <div className="text-[10px] sm:text-xs font-medium bg-green-100 text-green-700 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full whitespace-nowrap">
                           {classe.status === 'active' ? 'Active' : 'Inactive'}
                         </div>
-                        <button className="p-2 hover:bg-gray-200 rounded-lg transition-all" title="Voir détails">
-                          <ChevronRight className="w-4 h-4 text-gray-600" />
+                        <button className="p-1.5 sm:p-2 hover:bg-gray-200 rounded-lg transition-all" title="Voir détails">
+                          <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-600" />
                         </button>
                       </div>
                     </div>
