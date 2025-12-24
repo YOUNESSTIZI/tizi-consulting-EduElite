@@ -88,18 +88,18 @@ export default function Home() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 mt-12 max-w-2xl mx-auto">
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
-                <div className="text-3xl font-bold text-yellow-400 mb-1">100%</div>
-                <div className="text-sm text-white/80">Personnalisable</div>
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 mt-12 max-w-2xl mx-auto">
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-2 sm:p-3 md:p-4 border border-white/20">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-yellow-400 mb-1">100%</div>
+                <div className="text-xs sm:text-sm text-white/80 break-words text-center">Personnalisable</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
-                <div className="text-3xl font-bold text-yellow-400 mb-1">24/7</div>
-                <div className="text-sm text-white/80">Service Client</div>
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-2 sm:p-3 md:p-4 border border-white/20">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-yellow-400 mb-1">24/7</div>
+                <div className="text-xs sm:text-sm text-white/80 break-words text-center">Service Client</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
-                <div className="text-3xl font-bold text-yellow-400 mb-1">+</div>
-                <div className="text-sm text-white/80">Tablettes Disponibles</div>
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-2 sm:p-3 md:p-4 border border-white/20">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-yellow-400 mb-1">+</div>
+                <div className="text-xs sm:text-sm text-white/80 break-words text-center">Tablettes Disponibles</div>
               </div>
             </div>
           </div>
@@ -202,8 +202,8 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Prêt à Commencer ?
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+            Prêt à Commencer{'\u00A0'}?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Plateforme complète + Fourniture de tablettes disponible
