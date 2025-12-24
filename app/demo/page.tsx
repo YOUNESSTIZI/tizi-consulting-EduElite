@@ -1575,47 +1575,52 @@ export default function DemoPage() {
       ],
       content: (
         <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-blue-200">
-          <div className="bg-white rounded-xl shadow-xl p-4 sm:p-6 mb-4">
+          <div className="bg-white rounded-xl shadow-xl p-3 sm:p-4 md:p-6 mb-4 -mx-2 sm:-mx-4 md:-mx-6">
             {/* En-tête enfant */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center flex-shrink-0">
-                <UserCircle className="w-8 h-8 text-white" />
+            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <UserCircle className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
               <div className="flex-1 min-w-0">
-                <h4 className="font-bold text-gray-900 text-lg">Sophie Martin</h4>
-                <p className="text-sm text-gray-600 break-words">Classe: CE1-A | N°: 2025-001</p>
+                <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+                  <h4 className="font-bold text-gray-900 text-sm sm:text-base md:text-lg whitespace-nowrap">Sophie Martin</h4>
+                  <span className="text-xs sm:text-sm text-gray-600 whitespace-nowrap">•</span>
+                  <span className="text-xs sm:text-sm text-gray-600 whitespace-nowrap">CE1-A</span>
+                  <span className="text-xs sm:text-sm text-gray-600 whitespace-nowrap">•</span>
+                  <span className="text-xs sm:text-sm text-gray-600 whitespace-nowrap">N°: 2025-001</span>
+                </div>
               </div>
-              <div className="text-left sm:text-right self-start sm:self-auto">
-                <div className="text-2xl font-bold text-blue-600">15.5/20</div>
-                <div className="text-xs text-gray-500">Moyenne générale</div>
+              <div className="text-right flex-shrink-0">
+                <div className="text-lg sm:text-xl md:text-2xl font-bold text-blue-600">15.5/20</div>
+                <div className="text-[10px] sm:text-xs text-gray-500">Moyenne</div>
               </div>
             </div>
 
             {/* Statistiques principales */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
-              <div className="bg-green-50 rounded-lg p-4 border-l-4 border-green-500">
-                <div className="flex items-center gap-2 mb-1">
-                  <CheckCircle2 className="w-4 h-4 text-green-600" />
-                  <div className="text-xs text-gray-600">Présences</div>
+            <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-4 sm:mb-6">
+              <div className="bg-green-50 rounded-lg p-2 sm:p-3 md:p-4 border-l-4 border-green-500">
+                <div className="flex items-center gap-1 sm:gap-2 mb-0.5 sm:mb-1">
+                  <CheckCircle2 className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0" />
+                  <div className="text-[10px] sm:text-xs text-gray-600 truncate">Présences</div>
                 </div>
-                <div className="text-2xl font-bold text-green-600">142</div>
-                <div className="text-xs text-gray-500">Jours</div>
+                <div className="text-base sm:text-xl md:text-2xl font-bold text-green-600">142</div>
+                <div className="text-[10px] sm:text-xs text-gray-500 truncate">Jours</div>
               </div>
-              <div className="bg-red-50 rounded-lg p-4 border-l-4 border-red-500">
-                <div className="flex items-center gap-2 mb-1">
-                  <UserX className="w-4 h-4 text-red-600" />
-                  <div className="text-xs text-gray-600">Absences</div>
+              <div className="bg-red-50 rounded-lg p-2 sm:p-3 md:p-4 border-l-4 border-red-500">
+                <div className="flex items-center gap-1 sm:gap-2 mb-0.5 sm:mb-1">
+                  <UserX className="w-3 h-3 sm:w-4 sm:h-4 text-red-600 flex-shrink-0" />
+                  <div className="text-[10px] sm:text-xs text-gray-600 truncate">Absences</div>
                 </div>
-                <div className="text-2xl font-bold text-red-600">3</div>
-                <div className="text-xs text-gray-500">Jours</div>
+                <div className="text-base sm:text-xl md:text-2xl font-bold text-red-600">3</div>
+                <div className="text-[10px] sm:text-xs text-gray-500 truncate">Jours</div>
               </div>
-              <div className="bg-purple-50 rounded-lg p-4 border-l-4 border-purple-500">
-                <div className="flex items-center gap-2 mb-1">
-                  <GraduationCap className="w-4 h-4 text-purple-600" />
-                  <div className="text-xs text-gray-600">Professeurs</div>
+              <div className="bg-purple-50 rounded-lg p-2 sm:p-3 md:p-4 border-l-4 border-purple-500">
+                <div className="flex items-center gap-1 sm:gap-2 mb-0.5 sm:mb-1">
+                  <GraduationCap className="w-3 h-3 sm:w-4 sm:h-4 text-purple-600 flex-shrink-0" />
+                  <div className="text-[10px] sm:text-xs text-gray-600 truncate">Professeurs</div>
                 </div>
-                <div className="text-2xl font-bold text-purple-600">8</div>
-                <div className="text-xs text-gray-500">En charge</div>
+                <div className="text-base sm:text-xl md:text-2xl font-bold text-purple-600">8</div>
+                <div className="text-[10px] sm:text-xs text-gray-500 truncate">En charge</div>
               </div>
             </div>
 
@@ -1665,92 +1670,86 @@ export default function DemoPage() {
             </div>
 
             {/* Professeurs */}
-            <div className="mb-4">
-              <h5 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                <GraduationCap className="w-5 h-5 text-purple-600" />
-                Professeurs
+            <div className="mb-3 sm:mb-4">
+              <h5 className="font-bold text-gray-900 mb-2 sm:mb-3 flex items-center gap-2 text-sm sm:text-base">
+                <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600 flex-shrink-0" />
+                <span>Professeurs</span>
               </h5>
-              <div className="space-y-2">
-                <div className="bg-white border-2 border-purple-200 rounded-lg p-4">
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-3 gap-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center">
-                        <GraduationCap className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <div className="font-semibold text-gray-900">M. Bernard</div>
-                        <div className="text-xs text-gray-600">Mathématiques</div>
-                      </div>
+              <div className="space-y-2 sm:space-y-2.5">
+                <div className="bg-white border-2 border-purple-200 rounded-lg p-2.5 sm:p-3 md:p-4">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
-                    <button className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:from-blue-600 hover:to-indigo-700 transition-all flex items-center gap-2 w-full sm:w-auto justify-center">
-                      <MessageSquare className="w-4 h-4" />
-                      Contacter
+                    <div className="flex-1 min-w-0">
+                      <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base truncate">M. Bernard</div>
+                      <div className="text-[10px] sm:text-xs text-gray-600 truncate">Mathématiques</div>
+                    </div>
+                    <button className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg text-[10px] sm:text-xs md:text-sm font-semibold hover:from-blue-600 hover:to-indigo-700 transition-all flex items-center gap-1 sm:gap-2 flex-shrink-0">
+                      <MessageSquare className="w-3 h-3 sm:w-4 sm:h-4" />
+                      <span className="hidden sm:inline">Contacter</span>
                     </button>
                   </div>
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 text-xs text-gray-600">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-1.5 sm:gap-2 md:gap-4 text-[10px] sm:text-xs text-gray-600">
                     <div className="flex items-center gap-1">
-                      <Mail className="w-3 h-3" />
-                      <span className="break-all">bernard@ecole.fr</span>
+                      <Mail className="w-3 h-3 flex-shrink-0" />
+                      <span className="break-all truncate">bernard@ecole.fr</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <Phone className="w-3 h-3" />
-                      <span>01 23 45 67 89</span>
+                      <Phone className="w-3 h-3 flex-shrink-0" />
+                      <span className="whitespace-nowrap">01 23 45 67 89</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-white border-2 border-blue-200 rounded-lg p-4">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
-                        <GraduationCap className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <div className="font-semibold text-gray-900">Mme. Dubois</div>
-                        <div className="text-xs text-gray-600">Français</div>
-                      </div>
+                <div className="bg-white border-2 border-blue-200 rounded-lg p-2.5 sm:p-3 md:p-4">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
-                    <button className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:from-blue-600 hover:to-indigo-700 transition-all flex items-center gap-2">
-                      <MessageSquare className="w-4 h-4" />
-                      Contacter
+                    <div className="flex-1 min-w-0">
+                      <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base truncate">Mme. Dubois</div>
+                      <div className="text-[10px] sm:text-xs text-gray-600 truncate">Français</div>
+                    </div>
+                    <button className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg text-[10px] sm:text-xs md:text-sm font-semibold hover:from-blue-600 hover:to-indigo-700 transition-all flex items-center gap-1 sm:gap-2 flex-shrink-0">
+                      <MessageSquare className="w-3 h-3 sm:w-4 sm:h-4" />
+                      <span className="hidden sm:inline">Contacter</span>
                     </button>
                   </div>
-                  <div className="flex items-center gap-4 text-xs text-gray-600">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-1.5 sm:gap-2 md:gap-4 text-[10px] sm:text-xs text-gray-600">
                     <div className="flex items-center gap-1">
-                      <Mail className="w-3 h-3" />
-                      <span>dubois@ecole.fr</span>
+                      <Mail className="w-3 h-3 flex-shrink-0" />
+                      <span className="break-all truncate">dubois@ecole.fr</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <Phone className="w-3 h-3" />
-                      <span>01 23 45 67 90</span>
+                      <Phone className="w-3 h-3 flex-shrink-0" />
+                      <span className="whitespace-nowrap">01 23 45 67 90</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-white border-2 border-green-200 rounded-lg p-4">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center">
-                        <GraduationCap className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <div className="font-semibold text-gray-900">M. Martin</div>
-                        <div className="text-xs text-gray-600">Sciences</div>
-                      </div>
+                <div className="bg-white border-2 border-green-200 rounded-lg p-2.5 sm:p-3 md:p-4">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
-                    <button className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:from-blue-600 hover:to-indigo-700 transition-all flex items-center gap-2">
-                      <MessageSquare className="w-4 h-4" />
-                      Contacter
+                    <div className="flex-1 min-w-0">
+                      <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base truncate">M. Martin</div>
+                      <div className="text-[10px] sm:text-xs text-gray-600 truncate">Sciences</div>
+                    </div>
+                    <button className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg text-[10px] sm:text-xs md:text-sm font-semibold hover:from-blue-600 hover:to-indigo-700 transition-all flex items-center gap-1 sm:gap-2 flex-shrink-0">
+                      <MessageSquare className="w-3 h-3 sm:w-4 sm:h-4" />
+                      <span className="hidden sm:inline">Contacter</span>
                     </button>
                   </div>
-                  <div className="flex items-center gap-4 text-xs text-gray-600">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-1.5 sm:gap-2 md:gap-4 text-[10px] sm:text-xs text-gray-600">
                     <div className="flex items-center gap-1">
-                      <Mail className="w-3 h-3" />
-                      <span>martin@ecole.fr</span>
+                      <Mail className="w-3 h-3 flex-shrink-0" />
+                      <span className="break-all truncate">martin@ecole.fr</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <Phone className="w-3 h-3" />
-                      <span>01 23 45 67 91</span>
+                      <Phone className="w-3 h-3 flex-shrink-0" />
+                      <span className="whitespace-nowrap">01 23 45 67 91</span>
                     </div>
                   </div>
                 </div>
@@ -1773,49 +1772,53 @@ export default function DemoPage() {
         'Historique des paiements'
       ],
       content: (
-        <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border-2 border-green-200">
-          <div className="bg-white rounded-xl shadow-xl p-4 sm:p-6 mb-4">
+        <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-green-200">
+          <div className="bg-white rounded-xl shadow-xl p-3 sm:p-4 md:p-6 mb-4 -mx-2 sm:-mx-4 md:-mx-6">
             {/* En-tête */}
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
-                <CreditCard className="w-8 h-8 text-white" />
+            <div className="flex items-center gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-6">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <CreditCard className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <div className="flex-1">
-                <h4 className="font-bold text-gray-900 text-lg">Gestion des Paiements</h4>
-                <p className="text-sm text-gray-600">Sophie Martin - Classe CE1-A</p>
+              <div className="flex-1 min-w-0">
+                <h4 className="font-bold text-gray-900 text-sm sm:text-base md:text-lg truncate">Gestion des Paiements</h4>
+                <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap text-xs sm:text-sm text-gray-600">
+                  <span className="whitespace-nowrap">Sophie Martin</span>
+                  <span>•</span>
+                  <span className="whitespace-nowrap">CE1-A</span>
+                </div>
               </div>
             </div>
 
             {/* Reste à payer */}
-            <div className="mb-6">
-              <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-4 sm:p-6 border-2 border-orange-200">
-                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-4">
+            <div className="mb-4 sm:mb-6">
+              <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-3 sm:p-4 md:p-6 border-2 border-orange-200">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-3 sm:mb-4 gap-3 sm:gap-4">
                   <div className="flex-1 min-w-0">
-                    <h5 className="font-bold text-gray-900 mb-1 flex items-center gap-2">
-                      <AlertCircle className="w-5 h-5 text-orange-600" />
-                      Reste à Payer
+                    <h5 className="font-bold text-gray-900 mb-1 flex items-center gap-1.5 sm:gap-2 text-sm sm:text-base">
+                      <AlertCircle className="w-4 h-4 sm:w-5 sm:h-5 text-orange-600 flex-shrink-0" />
+                      <span>Reste à Payer</span>
                     </h5>
-                    <p className="text-sm text-gray-600">Montant total restant pour l'année scolaire</p>
+                    <p className="text-xs sm:text-sm text-gray-600">Montant total restant pour l'année scolaire</p>
                   </div>
-                  <div className="text-left sm:text-right">
-                    <div className="text-3xl sm:text-4xl font-bold text-orange-600 mb-1">450 €</div>
-                    <div className="text-xs text-gray-500">Sur 1200 €</div>
+                  <div className="text-left sm:text-right flex-shrink-0">
+                    <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-600 mb-1">450 €</div>
+                    <div className="text-[10px] sm:text-xs text-gray-500">Sur 1200 €</div>
                   </div>
                 </div>
-                <button className="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white px-4 py-3 rounded-lg font-semibold hover:from-orange-500 hover:to-red-500 transition-all flex items-center justify-center gap-2 text-sm sm:text-base">
-                  <CreditCard className="w-5 h-5" />
-                  Effectuer un paiement
+                <button className="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white px-3 sm:px-4 py-2 sm:py-3 rounded-lg font-semibold hover:from-orange-500 hover:to-red-500 transition-all flex items-center justify-center gap-2 text-xs sm:text-sm md:text-base">
+                  <CreditCard className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <span>Effectuer un paiement</span>
                 </button>
               </div>
             </div>
 
             {/* Tableau des paiements mensuels */}
             <div>
-              <h5 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <Receipt className="w-5 h-5 text-green-600" />
-                Historique des Paiements
+              <h5 className="font-bold text-gray-900 mb-3 sm:mb-4 flex items-center gap-1.5 sm:gap-2 text-sm sm:text-base">
+                <Receipt className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                <span>Historique des Paiements</span>
               </h5>
-              <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-4 border-2 border-gray-200">
+              <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-3 sm:p-4 border-2 border-gray-200 -mx-2 sm:-mx-4 md:mx-0">
                 <div className="space-y-2">
                   {[
                     { month: 'Septembre 2024', amount: 150, status: 'payé', date: '05/09/2024', facture: 'FAC-2024-09-001' },
@@ -1831,7 +1834,7 @@ export default function DemoPage() {
                   ].map((payment, index) => (
                     <div
                       key={index}
-                      className={`bg-white rounded-lg p-3 sm:p-4 border-2 ${
+                      className={`bg-white rounded-lg p-2.5 sm:p-3 md:p-4 border-2 ${
                         payment.status === 'payé' 
                           ? 'border-green-200' 
                           : payment.status === 'en attente'
@@ -1839,51 +1842,51 @@ export default function DemoPage() {
                           : 'border-red-200'
                       }`}
                     >
-                      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-3">
                         <div className="flex-1 min-w-0 w-full sm:w-auto">
-                          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
-                            <div className="font-semibold text-gray-900 text-sm sm:text-base">{payment.month}</div>
-                            <div className={`text-xs font-medium px-2 py-1 rounded-full flex items-center gap-1 w-fit ${
+                          <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-2 md:gap-3 mb-1.5 sm:mb-2">
+                            <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base truncate">{payment.month}</div>
+                            <div className={`text-[10px] sm:text-xs font-medium px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full flex items-center gap-1 w-fit whitespace-nowrap ${
                               payment.status === 'payé'
                                 ? 'bg-green-100 text-green-700'
                                 : payment.status === 'en attente'
                                 ? 'bg-yellow-100 text-yellow-700'
                                 : 'bg-red-100 text-red-700'
                             }`}>
-                              {payment.status === 'payé' && <CheckCircleIcon className="w-3 h-3" />}
-                              {payment.status === 'en attente' && <Clock className="w-3 h-3" />}
-                              {payment.status === 'non payé' && <XCircle className="w-3 h-3" />}
-                              {payment.status.charAt(0).toUpperCase() + payment.status.slice(1)}
+                              {payment.status === 'payé' && <CheckCircleIcon className="w-2.5 h-2.5 sm:w-3 sm:h-3 flex-shrink-0" />}
+                              {payment.status === 'en attente' && <Clock className="w-2.5 h-2.5 sm:w-3 sm:h-3 flex-shrink-0" />}
+                              {payment.status === 'non payé' && <XCircle className="w-2.5 h-2.5 sm:w-3 sm:h-3 flex-shrink-0" />}
+                              <span className="truncate">{payment.status.charAt(0).toUpperCase() + payment.status.slice(1)}</span>
                             </div>
                           </div>
-                          <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs text-gray-600">
+                          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 md:gap-4 text-[10px] sm:text-xs text-gray-600">
                             <span className="font-semibold text-gray-900">{payment.amount} €</span>
                             {payment.date !== '-' && (
                               <>
                                 <span className="hidden sm:inline">•</span>
-                                <span>Payé le {payment.date}</span>
+                                <span className="whitespace-nowrap">Payé le {payment.date}</span>
                               </>
                             )}
                             {payment.facture !== '-' && (
                               <>
                                 <span className="hidden sm:inline">•</span>
-                                <span className="break-all">{payment.facture}</span>
+                                <span className="break-all truncate">{payment.facture}</span>
                               </>
                             )}
                           </div>
                         </div>
-                        <div className="flex gap-2 w-full sm:w-auto">
+                        <div className="flex gap-1.5 sm:gap-2 w-full sm:w-auto">
                           {payment.status === 'payé' && payment.facture !== '-' && (
-                            <button className="flex-1 sm:flex-none bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold hover:from-blue-600 hover:to-indigo-700 transition-all flex items-center gap-2 justify-center">
-                              <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                            <button className="flex-1 sm:flex-none bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg text-[10px] sm:text-xs md:text-sm font-semibold hover:from-blue-600 hover:to-indigo-700 transition-all flex items-center gap-1 sm:gap-2 justify-center flex-shrink-0">
+                              <Download className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4" />
                               <span className="hidden sm:inline">Facture</span>
                               <span className="sm:hidden">Télécharger</span>
                             </button>
                           )}
                           {payment.status === 'non payé' && (
-                            <button className="flex-1 sm:flex-none bg-gradient-to-r from-orange-500 to-red-600 text-white px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold hover:from-orange-600 hover:to-red-700 transition-all flex items-center gap-2 justify-center">
-                              <CreditCard className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                              Payer
+                            <button className="flex-1 sm:flex-none bg-gradient-to-r from-orange-500 to-red-600 text-white px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg text-[10px] sm:text-xs md:text-sm font-semibold hover:from-orange-600 hover:to-red-700 transition-all flex items-center gap-1 sm:gap-2 justify-center flex-shrink-0">
+                              <CreditCard className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4" />
+                              <span>Payer</span>
                             </button>
                           )}
                         </div>
@@ -1895,18 +1898,18 @@ export default function DemoPage() {
             </div>
 
             {/* Résumé */}
-            <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="bg-green-50 rounded-lg p-4 text-center border-2 border-green-200">
-                <div className="text-2xl font-bold text-green-600 mb-1">8</div>
-                <div className="text-xs text-gray-600">Mois payés</div>
+            <div className="mt-4 sm:mt-6 grid grid-cols-3 gap-2 sm:gap-3 md:gap-4">
+              <div className="bg-green-50 rounded-lg p-2 sm:p-3 md:p-4 text-center border-2 border-green-200">
+                <div className="text-lg sm:text-xl md:text-2xl font-bold text-green-600 mb-0.5 sm:mb-1">8</div>
+                <div className="text-[10px] sm:text-xs text-gray-600">Mois payés</div>
               </div>
-              <div className="bg-yellow-50 rounded-lg p-4 text-center border-2 border-yellow-200">
-                <div className="text-2xl font-bold text-yellow-600 mb-1">1</div>
-                <div className="text-xs text-gray-600">En attente</div>
+              <div className="bg-yellow-50 rounded-lg p-2 sm:p-3 md:p-4 text-center border-2 border-yellow-200">
+                <div className="text-lg sm:text-xl md:text-2xl font-bold text-yellow-600 mb-0.5 sm:mb-1">1</div>
+                <div className="text-[10px] sm:text-xs text-gray-600">En attente</div>
               </div>
-              <div className="bg-red-50 rounded-lg p-4 text-center border-2 border-red-200">
-                <div className="text-2xl font-bold text-red-600 mb-1">2</div>
-                <div className="text-xs text-gray-600">Non payés</div>
+              <div className="bg-red-50 rounded-lg p-2 sm:p-3 md:p-4 text-center border-2 border-red-200">
+                <div className="text-lg sm:text-xl md:text-2xl font-bold text-red-600 mb-0.5 sm:mb-1">2</div>
+                <div className="text-[10px] sm:text-xs text-gray-600">Non payés</div>
               </div>
             </div>
           </div>
