@@ -1958,8 +1958,55 @@ export default function DemoPage() {
 
             {/* Graphique avec deux courbes linéaires */}
             <div className="relative">
-              <div className="relative mb-4 overflow-x-auto" style={{ height: '320px', minHeight: '280px' }}>
-                <svg className="w-full h-full min-w-[600px]" viewBox="0 0 1000 320" preserveAspectRatio="xMidYMid meet">
+              {/* Vue mobile : Liste des données par mois */}
+              <div className="block md:hidden space-y-2 mb-4">
+                {(() => {
+                  const months = [
+                    { month: 'Septembre', ca: 3150, charges: 2400 },
+                    { month: 'Octobre', ca: 3300, charges: 2500 },
+                    { month: 'Novembre', ca: 3000, charges: 2300 },
+                    { month: 'Décembre', ca: 2850, charges: 2200 },
+                    { month: 'Janvier', ca: 3150, charges: 2400 },
+                    { month: 'Février', ca: 3000, charges: 2350 },
+                    { month: 'Mars', ca: 3300, charges: 2500 },
+                    { month: 'Avril', ca: 3000, charges: 2300 },
+                    { month: 'Mai', ca: 3150, charges: 2400 },
+                    { month: 'Juin', ca: 3000, charges: 2300 }
+                  ];
+                  return months.map((m, i) => (
+                    <div key={i} className="bg-gray-50 rounded-lg p-2.5 border-2 border-gray-200">
+                      <div className="font-semibold text-gray-900 text-xs mb-2">{m.month}</div>
+                      <div className="flex items-center justify-between gap-2">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-1.5 mb-1">
+                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span className="text-[10px] text-gray-600">CA</span>
+                          </div>
+                          <div className="text-sm font-bold text-green-600">{m.ca.toLocaleString()} €</div>
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-1.5 mb-1">
+                            <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                            <span className="text-[10px] text-gray-600">Charges</span>
+                          </div>
+                          <div className="text-sm font-bold text-red-600">{m.charges.toLocaleString()} €</div>
+                        </div>
+                        <div className="flex-1 text-right">
+                          <div className="text-[10px] text-gray-500 mb-1">Bénéfice</div>
+                          <div className={`text-sm font-bold ${(m.ca - m.charges) >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                            {(m.ca - m.charges).toLocaleString()} €
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ));
+                })()}
+              </div>
+
+              {/* Vue desktop : Graphique SVG */}
+              <div className="hidden md:block relative mb-4" style={{ height: '320px', minHeight: '280px' }}>
+                <div className="relative overflow-x-auto" style={{ height: '320px', minHeight: '280px' }}>
+                  <svg className="w-full h-full min-w-[600px]" viewBox="0 0 1000 320" preserveAspectRatio="xMidYMid meet">
                   {/* Grille de fond */}
                   {[0, 1, 2, 3, 4].map((i) => (
                     <line
@@ -2102,29 +2149,30 @@ export default function DemoPage() {
                       </>
                     );
                   })()}
-                </svg>
-                
-                {/* Labels des mois en bas */}
-                <div className="absolute bottom-0 left-0 right-0 flex justify-between px-2 sm:px-4" style={{ paddingLeft: '40px', paddingRight: '40px' }}>
-                  {['Sept', 'Oct', 'Nov', 'Déc', 'Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin'].map((month, i) => (
-                    <div key={i} className="text-xs font-medium text-gray-600 truncate">
-                      {month}
-                    </div>
-                  ))}
-                </div>
-                
-                {/* Échelle à gauche */}
-                <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between py-4" style={{ paddingTop: '50px', paddingBottom: '50px' }}>
-                  {[4000, 3000, 2000, 1000, 0].map((value, i) => (
-                    <div key={i} className="text-xs text-gray-500 whitespace-nowrap">
-                      {value.toLocaleString()}€
-                    </div>
-                  ))}
+                  </svg>
+                  
+                  {/* Labels des mois en bas */}
+                  <div className="absolute bottom-0 left-0 right-0 flex justify-between px-2 sm:px-4" style={{ paddingLeft: '40px', paddingRight: '40px' }}>
+                    {['Sept', 'Oct', 'Nov', 'Déc', 'Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin'].map((month, i) => (
+                      <div key={i} className="text-xs font-medium text-gray-600 truncate">
+                        {month}
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Échelle à gauche */}
+                  <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between py-4" style={{ paddingTop: '50px', paddingBottom: '50px' }}>
+                    {[4000, 3000, 2000, 1000, 0].map((value, i) => (
+                      <div key={i} className="text-xs text-gray-500 whitespace-nowrap">
+                        {value.toLocaleString()}€
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              {/* Légende */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mb-4">
+              {/* Légende - Desktop uniquement */}
+              <div className="hidden md:flex flex-row items-center justify-center gap-6 mb-4">
                 <div className="flex items-center gap-2">
                   <div className="w-4 h-0.5 bg-green-500"></div>
                   <span className="text-sm font-semibold text-gray-700">Chiffre d'affaires</span>
